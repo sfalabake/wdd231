@@ -7,7 +7,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course will introduce students to programming...',
         technology: ['Python'],
-        completed: true // Set to true if completed
+        completed: true
     },
     {
         subject: 'WDD',
@@ -62,32 +62,52 @@ const courses = [
 ];
 
 const courseContainer = document.querySelector('#course-container');
-const creditTotal = document.querySelector('#total-credits');
+const creditTotalDisplay = document.querySelector('#total-credits');
 
+/**
+ * Renders the course cards and updates the total credits display.
+ * @param {Array} filteredCourses - The list of courses to display.
+ */
 function displayCourses(filteredCourses) {
+    // 1. Clear the current content
     courseContainer.innerHTML = "";
-    
+
+    // 2. Loop through the array and create elements
     filteredCourses.forEach(course => {
         const card = document.createElement('div');
-        // Add "completed" class based on status
-        card.className = `course-card ${course.completed ? 'completed' : 'incomplete'}`;
-        card.innerHTML = `<strong>${course.subject} ${course.number}</strong>`;
+
+        // Apply classes for styling and mark completed courses
+        card.className = `course-card ${course.completed ? 'completed' : 'not-completed'}`;
+
+        // Set the internal HTML (showing Subject and Number)
+        card.innerHTML = `<span>${course.subject} ${course.number}</span>`;
+
         courseContainer.appendChild(card);
     });
 
-    // Dynamic credit calculation using reduce
-    const total = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-    creditTotal.textContent = `Total Credits: ${total}`;
+    // 3. Calculate total credits for the displayed courses using reduce
+    const totalCredits = filteredCourses.reduce((accumulator, course) => {
+        return accumulator + course.credits;
+    }, 0);
+
+    // 4. Update the credit display text
+    creditTotalDisplay.textContent = `The total credits for the courses listed above is ${totalCredits}`;
 }
 
-// Initial Render
+// Initial display call to show all courses on page load
 displayCourses(courses);
 
-// Filter Event Listeners
-document.querySelector('#all').addEventListener('click', () => displayCourses(courses));
-document.querySelector('#cse').addEventListener('click', () => {
-    displayCourses(courses.filter(c => c.subject === 'CSE'));
+// Button event listeners for filtering
+document.querySelector('#all').addEventListener('click', () => {
+    displayCourses(courses);
 });
+
+document.querySelector('#cse').addEventListener('click', () => {
+    const cseList = courses.filter(course => course.subject === 'CSE');
+    displayCourses(cseList);
+});
+
 document.querySelector('#wdd').addEventListener('click', () => {
-    displayCourses(courses.filter(c => c.subject === 'WDD'));
+    const wddList = courses.filter(course => course.subject === 'WDD');
+    displayCourses(wddList);
 });
