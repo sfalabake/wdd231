@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>WDD 231 - Home Page - Solomon Oluwadunsin Falabake</title>
+
     <meta name="description"
-        content="Course home page for WDD 231: Web Frontend Development I, featuring course listings and student information.">
+        content="Course home page for WDD 231 featuring projects, certificates, and responsive web development assignments.">
+
     <meta name="author" content="Solomon Oluwadunsin Falabake">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
@@ -18,67 +27,105 @@
 </head>
 
 <body>
+
     <header>
-        <div class="logo-container">
-            <img src="images/company_logo.png" alt="Captainsky Logo" width="50" height="50">
+
+        <div class="header-top">
+            <img src="images/company_logo.png" alt="Site Logo" width="50" height="50">
             <span>Solomon Oluwadunsin Falabake</span>
         </div>
-        <button id="menu-button" aria-label="Toggle Menu">&#9776;</button>
-        <nav>
+
+        <button id="menu-button" aria-label="Toggle Navigation Menu" aria-expanded="false"></button>
+
+        <nav aria-label="Primary Navigation">
             <ul id="nav-list">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">Final</a></li>
+                <li><a href="chamber/index.html">Chamber Project</a></li>
+                <li><a href="final/index.html">Final Project</a></li>
             </ul>
         </nav>
+
     </header>
 
     <main>
+
         <h1>Home</h1>
-        <div class="main-grid">
-            <section class="about">
+
+        <div class="top-row">
+
+            <section class="card">
                 <h2>About Me</h2>
-                <p>
-                    I am a student at BYU-Pathway Worldwide pursuing a degree in Software Development.
-                    I focus on building responsive and accessible web applications using modern frontend tools.
-                    Beyond development, I manage technical logistics and supply squadron operations.
-                </p>
+
+                <div class="card-content">
+                    <p>
+                        I am a student at BYU-Pathway Worldwide pursuing a degree in Software Development.
+                        I am passionate about creating clean, efficient code and responsive websites.
+                        My current focus is mastering frontend technologies such as HTML, CSS, and JavaScript.
+                    </p>
+                </div>
             </section>
 
-            <section class="photo">
+            <section class="card">
                 <h2>Student Photo</h2>
-                <img src="images/passport.png" alt="Solomon Oluwadunsin Falabake profile" loading="lazy">
+
+                <div class="card-content center-image">
+                    <img src="images/passport.png" alt="Portrait of Solomon Oluwadunsin Falabake" width="250"
+                        height="300" loading="lazy">
+                </div>
             </section>
 
-            <section class="certificate">
-                <h2>Web Certificate Courses</h2>
-                <div class="filters">
-                    <button id="all">All</button>
-                    <button id="cse">CSE</button>
-                    <button id="wdd">WDD</button>
-                </div>
-                <div id="course-container">
-                </div>
-                <p id="total-credits"></p>
-            </section>
         </div>
+
+        <section class="card full-width">
+
+            <h2>Web Certificate Courses</h2>
+
+            <div class="card-content">
+
+                <div class="filters">
+                    <button type="button" id="all">All</button>
+                    <button type="button" id="cse">CSE</button>
+                    <button type="button" id="wdd">WDD</button>
+                </div>
+
+                <div id="course-container" aria-live="polite"></div>
+
+                <p id="total-credits"></p>
+
+            </div>
+
+        </section>
+
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/sfalabake" target="_blank">
-                <img src="images/github.svg" alt="GitHub" width="30">
+
+        <div class="social-links" aria-label="Social Media Links">
+
+            <a href="https://github.com/sfalabake" target="_blank" rel="noopener">
+                <img src="images/github.svg" alt="GitHub" width="40" height="40">
             </a>
-            <a href="#" target="_blank">
-                <img src="images/linkedin.svg" alt="LinkedIn" width="30">
+
+            <a href="#" target="_blank" rel="noopener">
+                <img src="images/linkedin.svg" alt="LinkedIn" width="40" height="40">
             </a>
-            <a href="#" target="_blank">
-                <img src="images/x.svg" alt="X Social Media" width="30">
+
+            <a href="#" target="_blank" rel="noopener">
+                <img src="images/x.svg" alt="X Social Platform" width="40" height="40">
             </a>
+
         </div>
-        <p>&copy; <span id="currentyear"></span> • Solomon Oluwadunsin Falabake • Lagos, Nigeria</p>
+
+        <p>
+            &copy;
+            <span id="currentyear"></span>
+            Solomon Oluwadunsin Falabake • Lagos, Nigeria
+        </p>
+
         <p id="lastModified"></p>
+
     </footer>
+
 </body>
 
 </html>

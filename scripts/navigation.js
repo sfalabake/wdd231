@@ -1,7 +1,13 @@
-const mainnav = document.querySelector('nav');
-const hambutton = document.querySelector('#menu-button');
+const navList = document.querySelector('#nav-list');
+const hamburgerButton = document.querySelector('#menu-button');
 
-hambutton.addEventListener('click', () => {
-    mainnav.classList.toggle('show');
-    hambutton.classList.toggle('show');
+hamburgerButton.addEventListener('click', () => {
+
+    navList.classList.toggle('open');
+
+    hamburgerButton.classList.toggle('open');
+
+    const isOpen = navList.classList.contains('open');
+
+    hamburgerButton.setAttribute('aria-expanded', isOpen);
 });

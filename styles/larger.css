@@ -1,15 +1,47 @@
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
+
+    header,
+    main,
+    footer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    #nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav a {
+        border-top: none;
+        border-right: 1px solid #555;
+    }
+
+    nav li:last-child a {
+        border-right: none;
+    }
+
+    .top-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
     #course-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .main-grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-    }
-
-    .certificate {
-        grid-column: span 2;
+    footer {
+        font-size: 1rem;
     }
 }
