@@ -205,3 +205,11 @@ a:focus {
     outline: 2px solid #000;
     outline-offset: 2px;
 }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
