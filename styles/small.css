@@ -24,6 +24,8 @@ footer {
     width: 100%;
 }
 
+/* ================= HEADER ================= */
+
 header {
     background-color: #222;
     color: white;
@@ -41,6 +43,8 @@ header {
     font-weight: bold;
 }
 
+/* ================= MENU BUTTON ================= */
+
 #menu-button {
     background: none;
     border: none;
@@ -57,6 +61,8 @@ header {
 #menu-button.open::before {
     content: "✕";
 }
+
+/* ================= NAVIGATION ================= */
 
 nav ul {
     list-style: none;
@@ -91,6 +97,8 @@ nav a:hover {
     font-weight: bold;
 }
 
+/* ================= MAIN ================= */
+
 main {
     padding: 1rem;
 }
@@ -99,6 +107,8 @@ h1 {
     margin-top: 0;
     font-size: 2rem;
 }
+
+/* ================= CARDS ================= */
 
 .card {
     border: 1px solid #999;
@@ -121,10 +131,14 @@ h1 {
     padding: 1rem;
 }
 
+/* ================= IMAGE ================= */
+
 .center-image img {
     display: block;
     margin: 0 auto;
 }
+
+/* ================= FILTERS ================= */
 
 .filters {
     display: flex;
@@ -146,6 +160,8 @@ h1 {
 .filters button:hover {
     background-color: #999;
 }
+
+/* ================= COURSE GRID ================= */
 
 #course-container {
     display: grid;
@@ -179,6 +195,8 @@ h1 {
     margin-top: 1rem;
 }
 
+/* ================= FOOTER ================= */
+
 footer {
     text-align: center;
     padding: 2rem 1rem;
@@ -186,25 +204,7 @@ footer {
     border-top: 1px solid #bbb;
 }
 
-.social-links {
-    margin-bottom: 1rem;
-}
-
-.social-links img {
-    width: 40px;
-    height: auto;
-    margin: 0 10px;
-}
-
-.social-links a:hover {
-    opacity: 0.7;
-}
-
-button:focus,
-a:focus {
-    outline: 2px solid #000;
-    outline-offset: 2px;
-}
+/* SOCIAL LINKS (FIXED) */
 
 .social-links {
     display: flex;
@@ -212,4 +212,72 @@ a:focus {
     align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.social-links img {
+    width: 40px;
+    height: auto;
+}
+
+.social-links a:hover {
+    opacity: 0.7;
+}
+
+/* ================= ACCESSIBILITY ================= */
+
+button:focus,
+a:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
+}
+
+/* ================= DESKTOP ================= */
+
+@media screen and (min-width: 768px) {
+
+    header,
+    main,
+    footer {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    #menu-button {
+        display: none;
+    }
+
+    #nav-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav a {
+        border-top: none;
+        border-right: 1px solid #555;
+    }
+
+    nav li:last-child a {
+        border-right: none;
+    }
+
+    .top-row {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    #course-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        font-size: 1rem;
+    }
 }
