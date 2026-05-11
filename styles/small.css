@@ -1,0 +1,49 @@
+/* Course Section Styling */
+.certificate {
+    padding: 1rem;
+    text-align: center;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.filters button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#course-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Stacked on mobile */
+    gap: 10px;
+}
+
+.course-card {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #e0e0e0;
+    /* Default color */
+    font-family: sans-serif;
+}
+
+/* Completed style - Different background and weight */
+.course-card.completed {
+    background-color: #9b2a2a;
+    /* Example: a dark red/maroon contrast */
+    color: white;
+}
+
+#total-credits {
+    font-weight: bold;
+    margin-top: 15px;
+}
