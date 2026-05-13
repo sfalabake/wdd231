@@ -5,7 +5,7 @@
             "address": "12 Victoria Island, Lagos",
             "phone": "+234 801 111 2222",
             "website": "https://lagostechhub.ng",
-            "image": "techhub.webp",
+            "image": "techhub.jpg",
             "membership": 3
         },
         {
@@ -13,7 +13,7 @@
             "address": "5 Marina Road, Lagos Island",
             "phone": "+234 802 222 3333",
             "website": "https://islandretail.ng",
-            "image": "retail.webp",
+            "image": "retail.jpg",
             "membership": 2
         },
         {
@@ -21,7 +21,7 @@
             "address": "8 Apapa Wharf Road, Lagos",
             "phone": "+234 803 333 4444",
             "website": "https://bluewavelogistics.ng",
-            "image": "logistics.webp",
+            "image": "logistics.jpg",
             "membership": 3
         },
         {
@@ -29,7 +29,7 @@
             "address": "3 Ikeja GRA, Lagos",
             "phone": "+234 804 444 5555",
             "website": "https://greenfarms.ng",
-            "image": "farm.webp",
+            "image": "farm.jpg",
             "membership": 1
         },
         {
@@ -37,7 +37,7 @@
             "address": "21 Lekki Phase 1, Lagos",
             "phone": "+234 805 555 6666",
             "website": "https://lagosdigital.ng",
-            "image": "agency.webp",
+            "image": "digital.jpg",
             "membership": 2
         },
         {
@@ -45,7 +45,7 @@
             "address": "15 Eko Atlantic, Lagos",
             "phone": "+234 806 666 7777",
             "website": "https://oceanviewhotels.ng",
-            "image": "hotel.webp",
+            "image": "hotel.jpg",
             "membership": 3
         },
         {
@@ -53,7 +53,7 @@
             "address": "9 Surulere Avenue, Lagos",
             "phone": "+234 807 777 8888",
             "website": "https://metroconstruction.ng",
-            "image": "construction.webp",
+            "image": "construction.jpg",
             "membership": 1
         }
     ]

@@ -4,38 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Business Directory | Lagos Chamber of Commerce</title>
-
     <meta name="description"
-        content="Discover and connect with local businesses in Lagos through the official Lagos Chamber of Commerce Business Directory.">
-
+        content="Discover trusted local businesses in Lagos through the official Chamber of Commerce Directory.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Business Directory | Lagos Chamber of Commerce">
-    <meta property="og:description" content="Find member businesses in Lagos. Browse our directory of local companies.">
-    <meta property="og:image" content="https://SFalabake.github.io/wdd231/chamber/images/coc-logo.png">
+    <meta property="og:description" content="Discover trusted local businesses in Lagos.">
+    <meta property="og:image" content="https://SFalabake.github.io/wdd231/chamber/images/home-image.png">
     <meta property="og:url" content="https://SFalabake.github.io/wdd231/chamber/directory.html">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Lagos Chamber of Commerce">
 
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico">
 
     <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
-
-    <!-- JS -->
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="logo-area">
-            <img src="images/coc-logo.png" alt="Lagos Chamber of Commerce Logo" id="logo">
+            <img src="images/coc-logo.png" alt="Lagos Chamber Logo" width="80" height="80">
             <div>
                 <h1>Lagos Chamber of Commerce</h1>
                 <p>Empowering Business in Lagos</p>
@@ -56,22 +48,26 @@
         </nav>
     </header>
 
+    <div class="hero">
+        <img src="images/home-image.png" alt="Lagos City View" class="hero-image">
+    </div>
+
     <main>
-        <section class="directory-header">
-            <h2>Business Directory</h2>
+        <h2 class="page-title">Business Directory</h2>
+
+        <section class="directory-controls">
             <div class="view-toggles">
                 <button id="grid-view" class="active">Grid View</button>
                 <button id="list-view">List View</button>
             </div>
         </section>
 
-        <!-- Members will be injected here by JavaScript -->
-        <div id="member-container" class="directory-grid"></div>
+        <div id="member-container" class="grid"></div>
     </main>
 
     <footer>
-        <div class="footer-info">
-            <div>
+        <div class="footer-content">
+            <div class="footer-col">
                 <h3>Lagos Chamber of Commerce</h3>
                 <p>1 Commerce House, Lagos Island</p>
                 <p>Lagos, Nigeria</p>
@@ -79,13 +75,13 @@
                 <p>(234) 01-555-2300</p>
             </div>
 
-            <div class="social-links">
+            <div class="footer-col social-links">
                 <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
                 <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
                 <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
             </div>
 
-            <div>
+            <div class="footer-col">
                 <p>WDD231 Class Project</p>
                 <p>Solomon Oluwadunsin Falabake</p>
                 <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
@@ -93,6 +89,9 @@
             </div>
         </div>
     </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </body>
 
 </html>

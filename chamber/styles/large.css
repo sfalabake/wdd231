@@ -4,13 +4,11 @@
 
     header {
         padding: 1rem 2rem;
-        display: flex;
-        align-items: center;
         justify-content: space-between;
     }
 
     .logo-area {
-        flex: 1;
+        flex: none;
     }
 
     #menu-toggle {
@@ -22,56 +20,85 @@
         flex-direction: row;
         gap: 1.5rem;
         margin-top: 0;
-        position: static;
+        align-items: center;
+    }
+
+    #navigation li {
+        list-style: none;
     }
 
     #navigation a {
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
         padding: 0.5rem 1rem;
+        transition: all 0.3s;
     }
 
-    /* Directory Header */
-    .directory-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        margin: 2rem;
+    #navigation a:hover,
+    #navigation a.active {
+        color: var(--primary-color, #003087);
+        background-color: transparent;
+        font-weight: bold;
     }
 
-    .view-toggles {
-        gap: 1rem;
+    /* Hero Image */
+    .hero-image {
+        height: 400px;
     }
 
-    /* Grid View - Multiple Columns */
+    /* Directory Controls */
+    .directory-controls {
+        margin: 0 2rem 1.5rem;
+    }
+
+    /* Grid View */
     #member-container.grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         padding: 0 2rem 3rem;
+        gap: 2rem;
     }
 
-    /* List View - Horizontal Layout */
+    /* List View */
     #member-container.list .member-card {
         display: flex;
         gap: 1.5rem;
         align-items: center;
         text-align: left;
+        padding: 1.5rem;
     }
 
     #member-container.list .member-card img {
-        width: 160px;
-        height: 160px;
+        width: 180px;
+        height: 180px;
         flex-shrink: 0;
     }
 
-    /* Footer */
-    .footer-info {
+    /* ====================== FOOTER ====================== */
+    .footer-content {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
+        padding: 0 2rem;
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    .footer-col {
+        text-align: left;
+    }
+
+    .footer-col.social-links {
+        text-align: center;
     }
 }
 
 @media (min-width: 1024px) {
+
+    .hero-image {
+        height: 450px;
+    }
+
     #member-container.grid {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
