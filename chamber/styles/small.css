@@ -43,7 +43,7 @@ header {
     object-fit: contain;
 }
 
-/* ====================== NAVIGATION ====================== */
+/* Navigation */
 #menu-toggle {
     position: absolute;
     top: 1.2rem;
@@ -116,7 +116,7 @@ header {
     border-color: var(--primary-color);
 }
 
-/* ====================== MEMBER CARDS - WIREFRAME STYLE ====================== */
+/* ====================== MEMBER CARDS ====================== */
 #member-container {
     padding: 0 1rem 2rem;
 }
@@ -205,13 +205,11 @@ header {
     text-align: left;
 }
 
-/* ====================== FOOTER - COMPACT WIREFRAME STYLE ====================== */
-
+/* ====================== FOOTER - COMPACT ====================== */
 footer {
     background-color: #f1f1f1;
     color: #333;
     padding: 2rem 1rem 1.5rem;
-    /* Reduced padding */
     margin-top: 2rem;
     border-top: 1px solid #ddd;
 }
@@ -241,30 +239,7 @@ footer {
     margin: 0 10px;
 }
 
-/* Desktop Footer */
-@media (min-width: 768px) {
-    footer {
-        padding: 2rem 1rem 1.5rem;
-    }
-
-    .footer-content {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-        gap: 2rem;
-        padding: 0 2rem;
-    }
-
-    .footer-col {
-        text-align: left;
-    }
-
-    .footer-col.social-links {
-        text-align: center;
-    }
-}
-
-/* ====================== LARGE SCREENS (included in small.css for simplicity) ====================== */
+/* ====================== DESKTOP STYLES ====================== */
 @media (min-width: 768px) {
     header {
         padding: 1rem 2rem;
@@ -317,6 +292,7 @@ footer {
         justify-content: space-between;
         text-align: left;
         padding: 0 2rem;
+        gap: 2rem;
     }
 
     .footer-col {
