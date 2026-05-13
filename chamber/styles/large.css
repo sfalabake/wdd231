@@ -1,37 +1,78 @@
-@media screen and (min-width: 768px) {
+/* ====================== LARGE.CSS - DESKTOP STYLES ====================== */
+
+@media (min-width: 768px) {
 
     header {
-        flex-direction: row;
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
     }
 
-    #navigation {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    #navigation li {
+    .logo-area {
         flex: 1;
     }
 
-    /* GRID EXPANDS ON LARGE SCREENS */
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    #menu-toggle {
+        display: none;
     }
 
-    .list section {
+    #navigation {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        margin-top: 0;
+        position: static;
+    }
+
+    #navigation a {
+        padding: 0.5rem 1rem;
+    }
+
+    /* Directory Header */
+    .directory-header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        margin: 2rem;
     }
 
-    .list section h3 {
-        width: 25%;
+    .view-toggles {
+        gap: 1rem;
     }
 
-    .footer-info {
+    /* Grid View - Multiple Columns */
+    #member-container.grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 0 2rem 3rem;
+    }
+
+    /* List View - Horizontal Layout */
+    #member-container.list .member-card {
         display: flex;
-        justify-content: space-around;
+        gap: 1.5rem;
+        align-items: center;
         text-align: left;
+    }
+
+    #member-container.list .member-card img {
+        width: 160px;
+        height: 160px;
+        flex-shrink: 0;
+    }
+
+    /* Footer */
+    .footer-info {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    #member-container.grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
 }
