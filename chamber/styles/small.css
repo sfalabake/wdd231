@@ -1,0 +1,37 @@
+#member-container {
+    padding: 1rem;
+}
+
+/* GRID VIEW */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.grid section {
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.grid section img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* LIST VIEW */
+.list section {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.list section img {
+    display: none;
+}

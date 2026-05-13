@@ -1,0 +1,37 @@
+@media screen and (min-width: 768px) {
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #navigation {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #navigation li {
+        flex: 1;
+    }
+
+    /* GRID EXPANDS ON LARGE SCREENS */
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .list section {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .list section h3 {
+        width: 25%;
+    }
+
+    .footer-info {
+        display: flex;
+        justify-content: space-around;
+        text-align: left;
+    }
+}
