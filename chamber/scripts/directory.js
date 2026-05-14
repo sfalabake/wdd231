@@ -42,7 +42,7 @@ function displayMembers(members) {
                  loading="lazy"
                  width="300" 
                  height="200">
-            <h3>${member.name}</h3>
+            <h2>${member.name}</h2>
             <p class="address">${member.address}</p>
             <p class="phone">${member.phone}</p>
             <a href="${member.website}" 
