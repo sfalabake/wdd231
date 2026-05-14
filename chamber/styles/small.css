@@ -25,6 +25,14 @@ header {
     position: relative;
 }
 
+.logo-area p:first-child {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--primary-color);
+}
+
+
 .logo-area {
     display: flex;
     align-items: center;
