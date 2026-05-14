@@ -10,35 +10,35 @@
         content="Discover trusted local businesses and connect with members of the Lagos Chamber of Commerce.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Business Directory | Lagos Chamber of Commerce">
-    <meta property="og:description"
-        content="Discover trusted local businesses and connect with members of the Lagos Chamber of Commerce.">
-    <meta property="og:image" content="https://SFalabake.github.io/wdd231/chamber/images/home-image.png">
-    <meta property="og:url" content="https://SFalabake.github.io/wdd231/chamber/directory.html">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
+    <!-- Google Fonts (REQUIRED) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JS -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/directory.js" defer></script>
 </head>
 
 <body>
+
     <header>
         <div class="logo-area">
             <img src="images/coc-logo.png" alt="Lagos Chamber of Commerce Logo" width="80" height="80">
+
             <div>
-                <h1>Lagos Chamber of Commerce</h1>
+                <p class="site-name">Lagos Chamber of Commerce</p>
                 <p>Empowering Business in Lagos</p>
             </div>
         </div>
 
         <nav>
-            <button id="menu-toggle" aria-label="Toggle Navigation">☰</button>
+            <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">☰</button>
+
             <ul id="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
@@ -56,15 +56,14 @@
     </div>
 
     <main>
-        <!-- h1 moved inside main as required by audit -->
         <h1 class="page-title">Business Directory</h1>
 
-        <section class="directory-controls">
+        <div class="directory-controls">
             <div class="view-toggles">
-                <button id="grid-view" class="active">Grid View</button>
-                <button id="list-view">List View</button>
+                <button type="button" id="grid-view" class="active" aria-pressed="true">Grid View</button>
+                <button type="button" id="list-view" aria-pressed="false">List View</button>
             </div>
-        </section>
+        </div>
 
         <div id="member-container" class="grid"></div>
     </main>
@@ -94,8 +93,6 @@
         </div>
     </footer>
 
-    <script src="scripts/main.js" defer></script>
-    <script src="scripts/directory.js" defer></script>
 </body>
 
 </html>

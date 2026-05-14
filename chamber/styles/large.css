@@ -1,14 +1,8 @@
-/* ====================== LARGE.CSS - DESKTOP STYLES ====================== */
-
 @media (min-width: 768px) {
 
     header {
-        padding: 1rem 2rem;
         justify-content: space-between;
-    }
-
-    .logo-area {
-        flex: none;
+        padding: 1rem 2rem;
     }
 
     #menu-toggle {
@@ -18,78 +12,37 @@
     #navigation {
         display: flex;
         flex-direction: row;
-        gap: 1.5rem;
+        gap: 1rem;
+        width: auto;
         margin-top: 0;
-        align-items: center;
     }
 
-    #navigation li {
-        list-style: none;
-    }
-
-    #navigation a {
-        color: #333;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        transition: all 0.3s;
-    }
-
-    #navigation a:hover,
-    #navigation a.active {
-        color: var(--primary-color, #003087);
-        background-color: transparent;
-        font-weight: bold;
-    }
-
-    /* Hero Image */
     .hero-image {
         height: 400px;
     }
 
-    /* Directory Controls */
-    .directory-controls {
-        margin: 0 2rem 1.5rem;
-    }
-
-    /* Grid View */
     #member-container.grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 0 2rem 3rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
     }
 
-    /* List View */
     #member-container.list .member-card {
         display: flex;
-        gap: 1.5rem;
+        gap: 1rem;
         align-items: center;
-        text-align: left;
-        padding: 1.5rem;
     }
 
     #member-container.list .member-card img {
-        width: 180px;
-        height: 180px;
-        flex-shrink: 0;
+        width: 150px;
+        height: 150px;
     }
 
-    /* ====================== FOOTER ====================== */
     .footer-content {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
-        padding: 0 2rem;
         max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .footer-col {
-        text-align: left;
-    }
-
-    .footer-col.social-links {
-        text-align: center;
+        margin: auto;
     }
 }
 
