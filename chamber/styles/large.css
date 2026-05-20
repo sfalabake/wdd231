@@ -6,6 +6,11 @@
         padding: 1rem 2rem;
     }
 
+    header nav {
+        width: auto;
+        /* Resets the mobile 100% width constraint */
+    }
+
     #menu-toggle {
         display: none;
     }
