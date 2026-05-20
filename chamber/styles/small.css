@@ -210,6 +210,7 @@ main {
     border: 0;
     border-top: 1px solid var(--border-neutral);
     margin: 10px 0;
+    width: 100%;
 }
 
 .weather-current {
