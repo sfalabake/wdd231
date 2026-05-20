@@ -41,7 +41,7 @@ header {
 }
 
 .brand-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin: 0;
     color: var(--primary-color);
@@ -53,7 +53,7 @@ header {
     color: var(--text-muted);
 }
 
-/* ================= NAV ================= */
+/* ================= RESPONSIVE NAVIGATION ================= */
 #menu-toggle {
     font-size: 1.8rem;
     background: none;
@@ -61,25 +61,39 @@ header {
     cursor: pointer;
     color: var(--primary-color);
     margin-left: auto;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
 
 #navigation {
     display: none;
     flex-direction: column;
     width: 100%;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    gap: 0.5rem;
 }
 
 #navigation.open {
     display: flex;
 }
 
+#navigation li {
+    width: 100%;
+}
+
 #navigation a {
-    padding: 1rem;
+    padding: 0.85rem 1rem;
     display: block;
+    text-align: center;
     text-decoration: none;
     color: var(--text-dark);
+    border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -96,7 +110,7 @@ header {
     object-fit: cover;
 }
 
-/* ================= MAIN ================= */
+/* ================= MAIN & CONTROLS ================= */
 .page-title {
     text-align: center;
     margin: 2rem 0 1rem;
@@ -115,12 +129,10 @@ header {
     border: 0;
 }
 
-/* ================= SPACING SYSTEM ================= */
 section {
     margin-bottom: 2rem;
 }
 
-/* ================= CONTROLS ================= */
 .directory-controls {
     display: flex;
     justify-content: flex-end;
@@ -147,42 +159,68 @@ button:focus {
     outline-offset: 2px;
 }
 
-/* ================= MEMBERS ================= */
+/* ================= MEMBERS CONTAINER ================= */
 #member-container {
     padding: 1rem;
 }
 
+/* GRID VIEW */
 #member-container.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .member-card {
     background: var(--white);
     border: 1px solid var(--border-light);
-    padding: 1rem;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .member-card img {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+    border-radius: 4px;
 }
 
-/* LIST VIEW */
-#member-container.list .member-card img {
-    display: none;
+/* LIST VIEW BASE: Completely structured text rows */
+#member-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 #member-container.list .member-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem;
 }
 
-/* ================= FOOTER ================= */
+/* Membership Badges */
+.gold {
+    font-weight: bold;
+    color: #b59410;
+}
+
+.silver {
+    font-weight: bold;
+    color: #7a7a7a;
+}
+
+.member {
+    color: var(--text-muted);
+}
+
+/* ================= FOOTER BASE (MOBILE) ================= */
 footer {
     background: var(--bg-footer);
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
+    border-top: 1px solid var(--border-light);
 }
 
 .footer-content {
@@ -195,7 +233,6 @@ footer {
 }
 
 .footer-content>div {
-    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -205,26 +242,16 @@ footer {
     margin: 0;
 }
 
-/* SOCIAL ICONS */
 .footer-content .social-links {
-    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: nowrap;
-    margin-top: 0.5rem;
-}
-
-.footer-content .social-links a {
-    display: inline-flex;
+    gap: 1.25rem;
 }
 
 .footer-content .social-links img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    display: block;
+    width: 36px;
+    height: 36px;
     transition: transform 0.2s ease;
 }
 
