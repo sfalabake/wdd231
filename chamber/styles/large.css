@@ -1,6 +1,6 @@
 @media (min-width: 768px) {
 
-    /* NAVIGATION */
+    /* ================= NAVIGATION ================= */
     #menu-toggle {
         display: none;
     }
@@ -17,24 +17,34 @@
         flex-wrap: nowrap;
     }
 
-    /* LIST VIEW */
+    /* ================= LIST VIEW ================= */
     #member-container.list .member-card {
         display: flex;
         gap: 1rem;
         align-items: flex-start;
     }
 
+    /* ================= FOOTER ================= */
     .footer-content {
         grid-template-columns: repeat(3, 1fr);
         text-align: left;
         align-items: start;
     }
 
+    /* ALIGNMENT FIX: Shifts the inner column elements to align cleanly to the left */
+    .footer-content>div {
+        align-items: flex-start;
+    }
+
+    /* SPECIFICITY BOOST: Overrides mobile centering and aligns social icons to the left */
     .footer-content .social-links {
         justify-content: flex-start;
+        margin-top: 0;
+        /* Tightens alignment with the column layout */
     }
 }
 
+/* ================= DESKTOP EXPANSION ================= */
 @media (min-width: 1024px) {
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
