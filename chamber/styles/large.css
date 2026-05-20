@@ -5,8 +5,9 @@
         display: none;
     }
 
+    /* REMOVED !important: Relies entirely on clean cascading file order priority */
     #navigation {
-        display: flex !important;
+        display: flex;
         flex-direction: row;
         width: auto;
         gap: 1rem;
@@ -31,16 +32,13 @@
         align-items: start;
     }
 
-    /* ALIGNMENT FIX: Shifts the inner column elements to align cleanly to the left */
     .footer-content>div {
         align-items: flex-start;
     }
 
-    /* SPECIFICITY BOOST: Overrides mobile centering and aligns social icons to the left */
     .footer-content .social-links {
         justify-content: flex-start;
         margin-top: 0;
-        /* Tightens alignment with the column layout */
     }
 }
 
