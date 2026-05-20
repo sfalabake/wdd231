@@ -37,20 +37,30 @@ header {
     align-items: center;
     justify-content: space-between;
     background: var(--light-bg);
-    padding: 1rem;
-    gap: 1rem;
+    padding: 0.75rem 1rem;
+    gap: 0.5rem;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex: 1;
+    gap: 0.75rem;
+    flex: 0 1 calc(100% - 55px);
+    /* Ensures the branding never collides with the toggle button */
     min-width: 0;
 }
 
+/* Explicit constraint to protect layout alignment from raw image sizing */
+.logo-area img {
+    width: 44px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
 .brand-title {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    /* Standardized for fluid scaling across 320px-400px viewports */
     font-weight: 700;
     margin: 0;
     color: var(--primary-color);
@@ -58,28 +68,29 @@ header {
 
 .logo-area div p {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-muted);
 }
 
 /* ================= NAVIGATION ================= */
 header nav {
     width: 100%;
-    /* Forces the navigation container to a new row on mobile layouts */
+    flex: 0 0 100%;
 }
 
 #menu-toggle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     background: none;
     border: none;
     cursor: pointer;
     color: var(--primary-color);
-    margin-left: auto;
     width: 44px;
     height: 44px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 44px;
+    margin-left: auto;
     z-index: 10;
 }
 
@@ -89,8 +100,9 @@ header nav {
     width: 100%;
     list-style: none;
     padding: 0;
-    margin: 1rem 0 0 0;
-    gap: 0.5rem;
+    margin: 0.75rem 0 0 0;
+    gap: 0.35rem;
+    /* Optimizes proximity; links stay cohesive without bloating the viewport */
 }
 
 #navigation.open {
@@ -102,12 +114,16 @@ header nav {
 }
 
 #navigation a {
-    padding: 0.85rem 1rem;
+    padding: 0.65rem 1rem;
+    /* Clean mobile touch targets that maximize vertical viewport space */
     display: block;
     text-align: center;
     text-decoration: none;
     color: var(--text-dark);
+    background: rgba(0, 0, 0, 0.04);
+    /* Soft background block repetition for distinct visual cues */
     border-radius: 4px;
+    font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -122,11 +138,8 @@ header nav {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    /* Restricts infinite width expansion on larger screen breaks */
     margin: 0 auto;
-    /* Perfectly centers the hero component system horizontally */
     padding: 0 1rem;
-    /* Establishes seamless gutter alignment with the main body grid */
 }
 
 .hero-image {
@@ -458,41 +471,16 @@ footer {
 
 /* ================= ULTRA-NARROW SCREEN LAYOUT BREAKPOINT (320px - 345px) ================= */
 @media screen and (max-width: 345px) {
-    header {
-        padding: 0.75rem;
-        gap: 0.5rem;
-    }
-
-    /* 1. Rigidly constraint logo width bounds to prevent navigation item collisions */
-    .logo-area {
-        gap: 0.5rem;
-        flex: 0 1 calc(100% - 55px);
-        min-width: 0;
-    }
-
     .brand-title {
-        font-size: 1.05rem;
+        font-size: 1.02rem;
     }
 
     .logo-area div p {
-        font-size: 0.78rem;
+        font-size: 0.75rem;
     }
 
-    /* 2. Anchor structural proportions for the drop toggle element box */
-    #menu-toggle {
-        font-size: 1.6rem;
-        width: 44px;
-        height: 44px;
-        flex: 0 0 44px;
-        margin-left: auto;
-    }
-
-    /* 3. Isolate the target expansion structure to an isolated layout block row */
-    header nav,
-    #navigation {
-        width: 100%;
-        flex: 0 0 100%;
-        margin-top: 0.75rem;
-        clear: both;
+    #navigation a {
+        padding: 0.55rem 1rem;
+        /* Structural compression for minimal viewports */
     }
 }

@@ -1,3 +1,9 @@
+/* ==========================================================================
+   Course Assignment: Chamber of Commerce Directory Styles
+   Author: Solomon Oluwadunsin Falabake
+   File: large.css (Desktop & Tablet Layout Resets)
+   ========================================================================== */
+
 @media (min-width: 768px) {
 
     /* ================= HEADER & NAV RESETS ================= */
@@ -8,11 +14,12 @@
 
     header nav {
         width: auto;
-        /* Resets the mobile 100% width constraint */
+        /* Resets the mobile 100% width block constraint */
     }
 
     #menu-toggle {
         display: none;
+        /* Safely hides the hamburger icon on larger viewports */
     }
 
     #navigation,
@@ -30,6 +37,15 @@
 
     #navigation a {
         padding: 0.6rem 1.2rem;
+        background: none;
+        /* Strips out the stacked mobile block background tint */
+    }
+
+    #navigation a:hover,
+    #navigation a.active {
+        background: var(--primary-color);
+        color: var(--white);
+        border-radius: 4px;
     }
 
     /* ================= HOME DASHBOARD LAYOUT GRID ================= */
@@ -68,7 +84,8 @@
         text-align: left;
     }
 
-    #member-container.list .member-card h2 {
+    /* Standardized to h3 to cleanly match the base structures in small.css */
+    #member-container.list .member-card h3 {
         margin: 0;
         flex: 2;
         font-size: 1.25rem;
