@@ -1,0 +1,70 @@
+/* ===== Base Styles ===== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+    color: #1f2937;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+    background: #1d4ed8;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* ===== Weather Card ===== */
+.weather-card {
+    background: white;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.location {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1d4ed8;
+}
+
+.temp-text {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#current-temp {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* ===== Weather Icon ===== */
+.weather-box img {
+    width: 100px;
+    height: 100px;
+}
+
+figcaption {
+    text-transform: capitalize;
+    margin-top: 8px;
+    font-style: italic;
+    color: #4b5563;
+}
+
+/* ===== Footer ===== */
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 15px;
+    background: #f3f4f6;
+    font-size: 0.9rem;
+}

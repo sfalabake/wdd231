@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="WDD 231 OpenWeatherMap API Weather App">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API Test</title>
+
+    <link rel="stylesheet" href="styles/weather.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const meta = document.createElement("meta");
+            meta.name = "last-modified";
+            meta.content = document.lastModified;
+            document.head.appendChild(meta);
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1>OpenWeatherMap Weather App</h1>
+    </header>
+
+    <main class="weather-card">
+
+        <p class="location">Trier, Germany</p>
+
+        <p class="temp-text">
+            Current temperature:
+            <span id="current-temp"></span>
+        </p>
+
+        <figure class="weather-box">
+            <img id="weather-icon" src="" alt="">
+            <figcaption></figcaption>
+        </figure>
+
+    </main>
+
+    <footer>
+        Solomon Oluwadunsin Falabake | OpenWeatherMap.org | CC BY-SA 4.0
+    </footer>
+
+    <script src="scripts/weather.js"></script>
+</body>
+
+</html>
