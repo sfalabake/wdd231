@@ -119,7 +119,6 @@ header {
     display: block;
 }
 
-/* Styled Call to Action button link matching instructions */
 .hero-btn {
     position: absolute;
     top: 50%;
@@ -232,111 +231,26 @@ main {
     margin: 0 0 0.5rem 0;
 }
 
-/* ================= BUSINESS SPOTLIGHT BLOCK GRID (HOME PAGE) ================= */
-.spotlight-grid {
+/* ================= GRID CONTAINERS & INNER CARD LAYOUTS ================= */
+.spotlight-grid,
+#member-container.grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
-.spotlight-card {
-    background-color: #dbdbdb;
-    border: 1px solid #b5b5b5;
-    border-radius: 6px;
-    padding: 15px;
-}
-
-.spotlight-card h4 {
-    margin: 0 0 4px 0;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.spotlight-card .tagline {
-    font-style: italic;
-    color: var(--text-muted);
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.spotlight-card hr {
-    border: 0;
-    border-top: 1px solid #b5b5b5;
-    margin: 10px 0;
-}
-
-.spotlight-details {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.spotlight-details .img-box {
-    width: 85px;
-    height: 85px;
-    background-color: #c5c5c5;
-    border: 1px solid #999999;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.spotlight-details .img-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.spotlight-details .contact-info {
-    font-size: 0.85rem;
-    line-height: 1.4;
-}
-
-.spotlight-details .contact-info p {
-    margin: 4px 0;
-}
-
-.spotlight-details .contact-info a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* Base Membership Ribbon Badges */
-.membership-badge {
-    display: inline-block;
-    margin-top: 6px !important;
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    border-radius: 3px;
-    text-transform: uppercase;
-    color: var(--white);
-}
-
-.membership-badge.gold {
-    background-color: #b59410;
-}
-
-.membership-badge.silver {
-    background-color: #7a7a7a;
-}
-
-/* ================= DIRECTORY CONTENT CONFIGS (DISCOVERY/DIRECTORY) ================= */
 #member-container {
     padding: 1rem 0;
 }
 
-/* Grid View Settings: Matches Spotlight Framing Mechanics Exactly */
 #member-container.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
 }
 
+/* Combined Gray Card Panels */
+.spotlight-card,
 #member-container.grid .member-card {
     background-color: #dbdbdb;
     border: 1px solid #b5b5b5;
@@ -346,6 +260,8 @@ main {
     flex-direction: column;
 }
 
+/* Unified Card Typography & Rules */
+.spotlight-card h4,
 #member-container.grid .member-card h3 {
     margin: 0 0 4px 0;
     font-size: 1.2rem;
@@ -353,6 +269,7 @@ main {
     text-align: center;
 }
 
+.spotlight-card .tagline,
 #member-container.grid .member-card .tagline {
     font-style: italic;
     color: var(--text-muted);
@@ -361,6 +278,7 @@ main {
     text-align: center;
 }
 
+.spotlight-card hr,
 #member-container.grid .member-card hr {
     border: 0;
     border-top: 1px solid #b5b5b5;
@@ -368,7 +286,8 @@ main {
     width: 100%;
 }
 
-/* Layout Split Box Logic */
+/* Consolidated Split View Flex Containers */
+.spotlight-details,
 .card-split-details {
     display: flex;
     gap: 15px;
@@ -376,6 +295,8 @@ main {
     text-align: left;
 }
 
+/* Square Graphic Box Placeholders */
+.spotlight-details .img-box,
 .card-split-details .img-box {
     width: 85px;
     height: 85px;
@@ -388,12 +309,15 @@ main {
     overflow: hidden;
 }
 
+.spotlight-details .img-box img,
 .card-split-details .img-box img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
+/* Text Detail Wrappers */
+.spotlight-details .contact-info,
 .card-split-details .contact-info {
     font-size: 0.85rem;
     line-height: 1.4;
@@ -402,33 +326,49 @@ main {
     gap: 2px;
 }
 
+.spotlight-details .contact-info p,
 .card-split-details .contact-info p {
     margin: 0;
 }
 
+.spotlight-details .contact-info a,
 .card-split-details .contact-info a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: 500;
 }
 
-/* Directory Membership Block Badges */
+/* ================= BADGES & MEMBERSHIP LABELS ================= */
+.membership-badge,
 .membership-block-badge {
     display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+/* Ribbon badge variant (Home page variant) */
+.membership-badge {
+    margin-top: 6px !important;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+/* Block badge variant (Directory grid variant) */
+.membership-block-badge {
     align-self: flex-start;
     margin-top: 6px;
     padding: 4px 10px;
-    font-size: 0.75rem;
     font-weight: 700;
-    text-transform: uppercase;
-    color: var(--white);
     border-radius: 4px;
 }
 
+.membership-badge.gold,
 .membership-block-badge.gold {
     background-color: #b59410;
 }
 
+.membership-badge.silver,
 .membership-block-badge.silver {
     background-color: #7a7a7a;
 }
@@ -437,7 +377,7 @@ main {
     background-color: #555555;
 }
 
-/* List View Settings */
+/* ================= DIRECTORY LIST-VIEW STATE RESET ================= */
 #member-container.list {
     display: flex;
     flex-direction: column;
