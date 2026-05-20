@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | Lagos Chamber of Commerce</title>
+
+    <meta name="description"
+        content="Welcome to the Lagos Chamber of Commerce. Empowering businesses, fostering local economic growth, and connecting trusted industry partners in Lagos, Nigeria.">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <meta property="og:title" content="Home | Lagos Chamber of Commerce">
+    <meta property="og:description"
+        content="Empowering businesses and fostering local economic growth in Lagos, Nigeria.">
+    <meta property="og:image" content="https://sfalabake.github.io/wdd231/chamber/images/home-image.webp">
+    <meta property="og:url" content="https://sfalabake.github.io/wdd231/chamber/index.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-area">
+            <img src="images/coc-logo.png" alt="Lagos Chamber of Commerce Logo" width="70" height="70">
+            <div>
+                <h2 class="brand-title">Lagos Chamber of Commerce</h2>
+                <p>Empowering Business in Lagos</p>
+            </div>
+        </div>
+
+        <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false"
+            aria-controls="navigation">☰</button>
+
+        <nav aria-label="Main navigation">
+            <ul id="navigation">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <img src="images/home-image.webp" alt="Lagos City Skyline" class="hero-image">
+        <a href="join.html" class="hero-btn">Join the Chamber</a>
+    </div>
+
+    <main>
+        <h1 class="page-title">Chamber Dashboard</h1>
+
+        <section class="info-grid">
+            <h2 class="visually-hidden">Latest Updates and Local Weather</h2>
+
+            <div class="card">
+                <h3>Current Events</h3>
+                <div class="card-body">
+                    <p><strong>Lagos Tech Expo 2026</strong></p>
+                    <p>Join us this Thursday at Victoria Island for networking and alternative energy discussions.</p>
+                    <hr>
+                    <p><strong>Quarterly Member Luncheon</strong></p>
+                    <p>Next week Tuesday at Commerce House. Registration is open to all registered businesses.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Current Weather</h3>
+                <div class="card-body weather-current">
+                    <p class="temp"><span id="temp">--</span></p>
+                    <p id="description" class="weather-desc">Loading weather...</p>
+                    <hr style="width: 100%;">
+                    <p>Humidity: <strong id="humidity">--</strong></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Weather Forecast</h3>
+                <div id="forecast" class="card-body weather-forecast">
+                </div>
+            </div>
+        </section>
+
+        <section class="spotlight-section">
+            <h2 class="section-subtitle">Chamber Business Spotlights</h2>
+            <div id="spotlight-container" class="spotlight-grid">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h2>Lagos Chamber of Commerce</h2>
+                <p>1 Commerce House, Lagos Island</p>
+                <p>Lagos, Nigeria</p>
+                <p>info@lagoschamber.ng</p>
+                <p>(234) 01-555-2300</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><img src="images/youtube.svg" alt="YouTube channel link"></a>
+                <a href="#"><img src="images/twitter.svg" alt="Twitter profile link"></a>
+                <a href="#"><img src="images/linkedin.svg" alt="LinkedIn profile link"></a>
+            </div>
+
+            <div class="footer-meta">
+                <p>WDD231 Class Project</p>
+                <p>Solomon Oluwadunsin Falabake</p>
+                <p>&copy; <span id="year"></span></p>
+                <p id="lastModified"></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

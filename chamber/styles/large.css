@@ -10,7 +10,6 @@
         display: none;
     }
 
-    /* Balanced specificity layout prevents collapsing bugs */
     #navigation,
     #navigation.open {
         display: flex;
@@ -26,6 +25,33 @@
 
     #navigation a {
         padding: 0.6rem 1.2rem;
+    }
+
+    /* ================= HOME DASHBOARD LAYOUT GRID ================= */
+
+    /* 3-Column Top Setup: Events spans 2 parts, weather boxes span 1 part each */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 20px;
+        margin: 2rem 0;
+        align-items: stretch;
+    }
+
+    .info-grid .card {
+        margin-bottom: 0;
+    }
+
+    /* 3-Column Business Spotlight Setup at the bottom */
+    .spotlight-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 1.5rem 0 3rem 0;
+    }
+
+    .spotlight-card {
+        margin-bottom: 0;
     }
 
     /* ================= LIST VIEW HORIZONTAL ROW TRANSFORMATION ================= */
@@ -63,7 +89,6 @@
 
     .footer-content .social-links {
         justify-content: center;
-        /* Centers social links cleanly in the middle column */
         width: 100%;
     }
 }
