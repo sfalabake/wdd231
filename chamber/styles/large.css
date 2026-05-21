@@ -1,25 +1,23 @@
-/* ==========================================================================
-   Course Assignment: Chamber of Commerce Directory Styles
-   Author: Solomon Oluwadunsin Falabake
-   File: large.css (Desktop & Tablet Layout Resets)
-   ========================================================================== */
-
 @media (min-width: 768px) {
 
-    /* ================= HEADER & NAV RESETS ================= */
     header {
         flex-wrap: nowrap;
         padding: 1rem 2rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-area {
+        flex: 0 1 auto;
     }
 
     header nav {
+        flex: 0 0 auto;
         width: auto;
-        /* Resets the mobile 100% width block constraint */
     }
 
     #menu-toggle {
         display: none;
-        /* Safely hides the hamburger icon on larger viewports */
     }
 
     #navigation,
@@ -38,7 +36,6 @@
     #navigation a {
         padding: 0.6rem 1.2rem;
         background: none;
-        /* Strips out the stacked mobile block background tint */
     }
 
     #navigation a:hover,
@@ -48,9 +45,6 @@
         border-radius: 4px;
     }
 
-    /* ================= HOME DASHBOARD LAYOUT GRID ================= */
-
-    /* 3-Column Top Setup: Events spans 2 parts, weather boxes span 1 part each */
     .info-grid {
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
@@ -63,7 +57,6 @@
         margin-bottom: 0;
     }
 
-    /* 3-Column Business Spotlight Setup at the bottom */
     .spotlight-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -75,7 +68,6 @@
         margin-bottom: 0;
     }
 
-    /* ================= LIST VIEW HORIZONTAL ROW TRANSFORMATION ================= */
     #member-container.list .member-card {
         flex-direction: row;
         justify-content: space-between;
@@ -84,7 +76,6 @@
         text-align: left;
     }
 
-    /* Standardized to h3 to cleanly match the base structures in small.css */
     #member-container.list .member-card h3 {
         margin: 0;
         flex: 2;
@@ -97,25 +88,50 @@
         flex: 1.5;
     }
 
-    /* ================= PROPERLY ARRANGED FOOTER GRID ================= */
     .footer-content {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        text-align: left;
         align-items: start;
-        gap: 3rem;
+        gap: 2rem;
     }
 
-    .footer-content>div {
+    .footer-content h1,
+    .footer-content h2,
+    .footer-content h3,
+    .footer-content h4,
+    .footer-content p {
+        margin-top: 0;
+    }
+
+    .footer-content>div:first-child {
+        text-align: left;
         align-items: flex-start;
+    }
+
+    .footer-content>div:nth-child(2) {
+        align-items: center;
+        justify-content: center;
     }
 
     .footer-content .social-links {
         justify-content: center;
         width: 100%;
     }
+
+    .footer-content>div:last-child {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .footer-content>div:last-child p,
+    .footer-content>div:last-child span {
+        text-align: left !important;
+        width: 100% !important;
+    }
 }
 
-/* ================= DESKTOP EXTENSION ================= */
 @media (min-width: 1024px) {
     #member-container.grid {
         grid-template-columns: repeat(3, 1fr);
