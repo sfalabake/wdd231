@@ -5,33 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- REQUIRED TITLE FIX -->
     <title>WDD 231 Course Home Page | Solomon Oluwadunsin Falabake</title>
 
     <meta name="description"
         content="WDD 231 course home page showcasing web development projects, certificates, and responsive HTML, CSS, and JavaScript by Solomon Oluwadunsin Falabake.">
-
     <meta name="author" content="Solomon Oluwadunsin Falabake">
 
-    <!-- Open Graph Meta Tags -->
+    <!-- Open Graph -->
     <meta property="og:title" content="WDD 231 Course Home Page | Solomon Oluwadunsin Falabake">
-    <meta property="og:description"
-        content="WDD 231 course home page showcasing web development projects, certificates, and responsive HTML, CSS, and JavaScript by Solomon Oluwadunsin Falabake.">
-    <meta property="og:image" content="https://sfalabake.github.io/wdd231/images/passport.png">
-    <meta property="og:url" content="https://sfalabake.github.io/wdd231/">
+    <meta property="og:description" content="Responsive course homepage built with HTML, CSS and JavaScript.">
     <meta property="og:type" content="website">
 
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
 
-    <link rel="icon" href="images/favicon.ico">
-
+    <!-- JS -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/date.js" defer></script>
     <script src="scripts/course.js" defer></script>
@@ -40,9 +35,7 @@
 <body>
 
     <header>
-
         <div class="header-top">
-            <!-- REQUIRED: change PNG to SVG (make sure file exists) -->
             <img src="images/company_logo.svg" alt="Site Logo" width="50" height="50">
             <span>Solomon Oluwadunsin Falabake</span>
         </div>
@@ -56,30 +49,26 @@
                 <li><a href="final/index.html">Final</a></li>
             </ul>
         </nav>
-
     </header>
 
     <main>
 
-        <h1>WDD 231 Course Home Page</h1>
+        <h1>WDD 231 Course Home Page | Solomon Oluwadunsin Falabake</h1>
 
         <div class="top-row">
 
             <section class="card">
                 <h2>About Me</h2>
-
                 <div class="card-content">
                     <p>
-                        I am a student at BYU-Pathway Worldwide pursuing a degree in Software Development.
-                        I am passionate about creating clean, efficient code and responsive websites.
-                        My current focus is mastering frontend technologies such as HTML, CSS, and JavaScript.
+                        I am a student learning web development and building responsive, accessible websites using HTML,
+                        CSS, and JavaScript.
                     </p>
                 </div>
             </section>
 
             <section class="card">
                 <h2>Student Photo</h2>
-
                 <div class="card-content center-image">
                     <img src="images/passport.png" alt="Portrait of Solomon Oluwadunsin Falabake" width="250"
                         height="300" loading="lazy">
@@ -89,15 +78,14 @@
         </div>
 
         <section class="card full-width">
-
             <h2>Web Certificate Courses</h2>
 
             <div class="card-content">
 
                 <div class="filters">
-                    <button type="button" id="all">All</button>
-                    <button type="button" id="cse">CSE</button>
-                    <button type="button" id="wdd">WDD</button>
+                    <button id="all" type="button">All</button>
+                    <button id="cse" type="button">CSE</button>
+                    <button id="wdd" type="button">WDD</button>
                 </div>
 
                 <div id="course-container" aria-live="polite"></div>
@@ -105,7 +93,6 @@
                 <p id="total-credits"></p>
 
             </div>
-
         </section>
 
     </main>
@@ -115,22 +102,21 @@
         <nav class="social-links" aria-label="Social Media Links">
 
             <a href="https://github.com/sfalabake" target="_blank" rel="noopener">
-                <img src="images/github.svg" alt="GitHub profile link" width="40" height="40">
+                <img src="images/github.svg" alt="Link to GitHub profile" width="40" height="40">
             </a>
 
             <a href="https://linkedin.com/" target="_blank" rel="noopener">
-                <img src="images/linkedin.svg" alt="LinkedIn profile link" width="40" height="40">
+                <img src="images/linkedin.svg" alt="Link to LinkedIn profile" width="40" height="40">
             </a>
 
             <a href="https://x.com/sfalabake" target="_blank" rel="noopener">
-                <img src="images/twitter-logo.svg" alt="X Social Platform" width="40" height="40">
+                <img src="images/twitter-logo.svg" alt="X social platform link" width="40" height="40">
             </a>
 
         </nav>
 
         <p>
-            &copy;
-            <span id="currentyear"></span>
+            © <span id="currentyear"></span>
             Solomon Oluwadunsin Falabake • Lagos, Nigeria
         </p>
 

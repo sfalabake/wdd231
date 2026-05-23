@@ -1,14 +1,12 @@
 @media screen and (min-width: 768px) {
 
-    header,
-    main,
-    footer {
-        max-width: 1200px;
-        margin: 0 auto;
+    header {
+        width: 100%;
     }
 
     main {
-        padding: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 
     #menu-button {
@@ -18,7 +16,8 @@
     #nav-list {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
+        align-items: center;
     }
 
     nav a {
@@ -31,17 +30,10 @@
     }
 
     .top-row {
-        display: grid;
         grid-template-columns: 2fr 1fr;
-        gap: 20px;
-        align-items: start;
     }
 
     #course-container {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    footer {
-        font-size: 1rem;
     }
 }

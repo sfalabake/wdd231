@@ -6,11 +6,10 @@
 
 body {
     margin: 0;
-    padding: 0;
     font-family: "Roboto", sans-serif;
     line-height: 1.6;
+    background: #f4f4f4;
     overflow-x: hidden;
-    background-color: #f4f4f4;
 }
 
 img {
@@ -18,17 +17,10 @@ img {
     height: auto;
 }
 
-header,
-main,
-footer {
-    width: 100%;
-}
-
-/* ================= HEADER ================= */
-
+/* HEADER */
 header {
-    background-color: #222;
-    color: white;
+    background: #222;
+    color: #fff;
 }
 
 .header-top {
@@ -38,18 +30,12 @@ header {
     padding: 1rem;
 }
 
-.header-top span {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-/* ================= MENU BUTTON ================= */
-
+/* MENU */
 #menu-button {
     background: none;
     border: none;
-    color: white;
     font-size: 2rem;
+    color: white;
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
@@ -62,15 +48,11 @@ header {
     content: "✕";
 }
 
-/* ================= NAVIGATION ================= */
-
-nav ul {
+/* NAV */
+#nav-list {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-#nav-list {
     display: none;
     flex-direction: column;
 }
@@ -82,202 +64,119 @@ nav ul {
 nav a {
     display: block;
     padding: 1rem;
-    color: white;
     text-decoration: none;
+    color: white;
     border-top: 1px solid #555;
 }
 
 nav a:hover {
-    background-color: #555;
-    transition: background-color 0.3s ease;
+    background: #555;
 }
 
 .active {
-    background-color: #666;
-    font-weight: bold;
+    background: #444;
+    border-bottom: 3px solid #fff;
 }
 
-/* ================= MAIN ================= */
-
+/* MAIN */
 main {
     padding: 1rem;
 }
 
-h1 {
-    margin-top: 0;
-    font-size: 2rem;
+.top-row {
+    display: grid;
+    gap: 1rem;
 }
 
-/* ================= CARDS ================= */
-
+/* CARDS */
 .card {
+    background: white;
     border: 1px solid #999;
-    margin: 1rem 0;
     border-radius: 6px;
     overflow: hidden;
-    background-color: white;
 }
 
 .card h2 {
-    background-color: #222;
+    background: #222;
     color: white;
     margin: 0;
     padding: 1rem;
     text-align: center;
-    font-size: 1.1rem;
 }
 
 .card-content {
     padding: 1rem;
 }
 
-/* ================= IMAGE ================= */
-
+/* IMAGE */
 .center-image img {
     display: block;
     margin: 0 auto;
 }
 
-/* ================= FILTERS ================= */
-
+/* FILTERS */
 .filters {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 1rem;
     flex-wrap: wrap;
 }
 
 .filters button {
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 1rem;
     border: 1px solid #444;
-    border-radius: 6px;
-    background-color: #ccc;
+    background: #ccc;
     cursor: pointer;
-    font-weight: bold;
 }
 
 .filters button:hover {
-    background-color: #999;
+    background: #999;
 }
 
-/* ================= COURSE GRID ================= */
-
+/* COURSES */
 #course-container {
     display: grid;
-    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
 .course-card {
     padding: 1rem;
     text-align: center;
-    border: 1px solid #888;
+    background: #ddd;
     border-radius: 6px;
-    background-color: #ddd;
 }
 
 .course-card.completed {
-    background-color: #7a1f1f;
+    background: #7a1f1f;
     color: white;
-    border: 2px solid #4caf50;
-    font-weight: bold;
 }
 
-.course-card:hover {
-    transform: scale(1.02);
-    transition: transform 0.2s ease;
+.course-card.not-completed {
+    background: #eee;
+    color: #333;
 }
 
 #total-credits {
     text-align: center;
     font-weight: bold;
-    margin-top: 1rem;
 }
 
-/* ================= FOOTER ================= */
-
+/* FOOTER */
 footer {
     text-align: center;
+    background: #ddd;
     padding: 2rem 1rem;
-    background-color: #ddd;
-    border-top: 1px solid #bbb;
 }
-
-/* SOCIAL LINKS (FIXED) */
 
 .social-links {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1rem;
-    flex-wrap: wrap;
     margin-bottom: 1rem;
 }
 
-.social-links img {
-    width: 40px;
-    height: auto;
-}
-
-.social-links a:hover {
-    opacity: 0.7;
-}
-
-/* ================= ACCESSIBILITY ================= */
-
+/* ACCESSIBILITY */
 button:focus,
 a:focus {
-    outline: 2px solid #000;
-    outline-offset: 2px;
-}
-
-/* ================= DESKTOP ================= */
-
-@media screen and (min-width: 768px) {
-
-    header,
-    main,
-    footer {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    #menu-button {
-        display: none;
-    }
-
-    #nav-list {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    nav a {
-        border-top: none;
-        border-right: 1px solid #555;
-    }
-
-    nav li:last-child a {
-        border-right: none;
-    }
-
-    .top-row {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: 20px;
-        align-items: start;
-    }
-
-    #course-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    footer {
-        font-size: 1rem;
-    }
+    outline: 2px solid black;
 }
