@@ -1,13 +1,17 @@
 @media screen and (min-width: 768px) {
 
-    header {
-        width: 100%;
-    }
+    /* =========================
+       PAGE CONTAINER
+       ========================= */
 
     main {
         max-width: 1200px;
         margin: 0 auto;
     }
+
+    /* =========================
+       HEADER / NAV
+       ========================= */
 
     #menu-button {
         display: none;
@@ -29,11 +33,23 @@
         border-right: none;
     }
 
+    /* =========================
+       LAYOUT GRID
+       ========================= */
+
     .top-row {
         grid-template-columns: 2fr 1fr;
     }
 
     #course-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* =========================
+       MODAL ADJUSTMENT
+       ========================= */
+
+    dialog {
+        width: 60%;
     }
 }
