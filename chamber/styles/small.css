@@ -397,7 +397,8 @@ main {
 
 .membership-badge.gold,
 .membership-block-badge.gold {
-    background-color: #b59410;
+    background-color: #8a6d00;
+    color: var(--white);
 }
 
 .membership-badge.silver,
