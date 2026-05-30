@@ -693,17 +693,34 @@ dialog button {
 
 /* ================= THANK YOU PAGE ================= */
 
+.thankyou-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
 .thankyou-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-dark);
+    background: var(--light-bg);
+    border: 1px solid var(--border-light);
+    padding: 2rem;
     border-radius: 6px;
-    padding: 1rem;
-    margin-top: 1rem;
+    max-width: 600px;
+    width: 100%;
+}
+
+.thankyou-card h1 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
 }
 
 .thankyou-message {
-    margin-bottom: 1rem;
-    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+#summary p {
+    margin: 0.4rem 0;
 }
 
 .thankyou-nav {
@@ -715,13 +732,11 @@ dialog button {
 
 .btn-primary,
 .btn-secondary {
-    display: inline-block;
     padding: 0.7rem 1rem;
     text-decoration: none;
     border-radius: 4px;
-    color: var(--white);
-    font-weight: 600;
-    transition: transform 0.2s ease, background 0.2s ease;
+    color: white;
+    display: inline-block;
 }
 
 .btn-primary {
@@ -730,10 +745,4 @@ dialog button {
 
 .btn-secondary {
     background: var(--accent-color);
-}
-
-.btn-primary:hover,
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
 }

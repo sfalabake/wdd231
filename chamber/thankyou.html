@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Thank You | Lagos Chamber of Commerce</title>
+    <title>Thank You | Lagos Chamber of Commerce Membership</title>
 
-    <meta name="description" content="Membership application confirmation for Lagos Chamber of Commerce.">
+    <meta name="description" content="Membership application confirmation page for the Lagos Chamber of Commerce.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/large.css">
 
+    <script src="scripts/main.js" defer></script>
     <script src="scripts/thankyou.js" defer></script>
 </head>
 
@@ -26,46 +32,73 @@
             <p>Empowering Business in Lagos</p>
         </div>
     </div>
+
+    <nav aria-label="Main navigation">
+        <ul id="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
 </header>
 
-<main class="join-layout">
+<main class="thankyou-main">
 
-    <section class="form-section">
+    <section class="thankyou-card">
 
-        <h1 class="page-title">Thank You for Your Application</h1>
+        <h1>Thank You for Your Application</h1>
 
         <p class="thankyou-message">
-            Your membership application has been successfully submitted.
+            We have received your membership application successfully.
         </p>
 
-        <div class="thankyou-card">
+        <div id="summary"></div>
 
-            <p><strong>First Name:</strong> <span id="fname"></span></p>
-            <p><strong>Last Name:</strong> <span id="lname"></span></p>
-            <p><strong>Email:</strong> <span id="email"></span></p>
-            <p><strong>Phone:</strong> <span id="phone"></span></p>
-            <p><strong>Organization:</strong> <span id="organization"></span></p>
-            <p><strong>Membership:</strong> <span id="membership"></span></p>
-            <p><strong>Submitted:</strong> <span id="timestamp"></span></p>
-
-        </div>
-
-        <!-- NAVIGATION SECTION -->
-        <div class="thankyou-nav">
-
-            <a href="join.html" class="btn-primary">
-                Back to Application
-            </a>
-
-            <a href="index.html" class="btn-secondary">
-                Go to Home
-            </a>
-
-        </div>
+        <nav class="thankyou-nav">
+            <a class="btn-primary" href="join.html">Back to Form</a>
+            <a class="btn-secondary" href="index.html">Go to Home</a>
+        </nav>
 
     </section>
 
 </main>
+
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-info">
+            <h2>Lagos Chamber of Commerce</h2>
+            <p>1 Commerce House, Lagos Island</p>
+            <p>Lagos, Nigeria</p>
+            <p>info@lagoschamber.ng</p>
+            <p>(234) 01-555-2300</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/youtube.svg" alt="YouTube channel link">
+            </a>
+
+            <a href="https://twitter.com/sfalabake" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Twitter profile link">
+            </a>
+
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.svg" alt="LinkedIn profile link">
+            </a>
+        </div>
+
+        <div class="footer-meta">
+            <p>WDD231 Class Project</p>
+            <p>Solomon Oluwadunsin Falabake</p>
+            <p>&copy; <span id="year"></span> Lagos Chamber of Commerce</p>
+            <p id="lastModified"></p>
+        </div>
+
+    </div>
+</footer>
 
 </body>
 </html>
