@@ -690,3 +690,50 @@ dialog button {
         top: 1rem;
     }
 }
+
+/* ================= THANK YOU PAGE ================= */
+
+.thankyou-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-dark);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.thankyou-message {
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.thankyou-nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    color: var(--white);
+    font-weight: 600;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.btn-secondary {
+    background: var(--accent-color);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
