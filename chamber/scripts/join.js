@@ -5,9 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // =====================================================
     const timestampField = document.getElementById("timestamp");
 
-    if (timestampField) {
-        timestampField.value = new Date().toISOString();
-    }
+    const updateTimestamp = () => {
+        if (timestampField) {
+            timestampField.value = new Date().toISOString();
+        }
+    };
+
+    updateTimestamp();
 
     // =====================================================
     // 2. MEMBERSHIP MODAL HANDLING
@@ -34,42 +38,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // =====================================================
-    // 3. FORM SUBMISSION HANDLER (CUSTOM ACTION)
+    // 3. FORM SUBMISSION HANDLER
     // =====================================================
-    const form = document.querySelector("form");
+    const form = document.querySelector("form[action='thankyou.html']");
 
     if (form) {
         form.addEventListener("submit", (event) => {
-            event.preventDefault(); // stop default redirect
+            event.preventDefault();
 
-            // Collect form data
             const formData = new FormData(form);
 
             const firstName = formData.get("fname");
             const lastName = formData.get("lname");
             const membership = formData.get("membership");
 
-            // Simple validation safety check
-            if (!firstName || !membership) {
-                alert("Please complete required fields.");
+            if (!firstName || !lastName || !membership) {
+                alert("Please complete all required fields.");
                 return;
             }
 
-            // Build friendly message
-            const membershipLabel = membership.toUpperCase();
+            const membershipMap = {
+                np: "NP Membership",
+                bronze: "Bronze Membership",
+                silver: "Silver Membership",
+                gold: "Gold Membership"
+            };
+
+            const membershipLabel = membershipMap[membership] || membership;
 
             alert(
                 `Thank you ${firstName} ${lastName}!\n\n` +
-                `You are now applying for ${membershipLabel} membership.\n\n` +
+                `You are now applying for ${membershipLabel}.\n\n` +
                 `Redirecting to confirmation page...`
             );
 
-            // ensure timestamp is updated at submit moment
-            if (timestampField) {
-                timestampField.value = new Date().toISOString();
-            }
+            updateTimestamp();
 
-            // redirect to thank you page with query string
             const params = new URLSearchParams(new FormData(form));
             window.location.href = `thankyou.html?${params.toString()}`;
         });
