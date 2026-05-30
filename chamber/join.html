@@ -68,12 +68,12 @@
 
             <label>
                 First Name
-                <input type="text" name="fname" autocomplete="given-name" required>
+                <input type="text" name="fname" autocomplete="given-name" title="Please enter your first name." required>
             </label>
 
             <label>
                 Last Name
-                <input type="text" name="lname" autocomplete="family-name" required>
+                <input type="text" name="lname" autocomplete="family-name" title="Please enter your last name." required>
             </label>
 
             <label>
@@ -91,6 +91,7 @@
                        name="email"
                        autocomplete="email"
                        placeholder="example@email.com"
+                       title="Please enter a valid email address (e.g., name@domain.com)."
                        required>
             </label>
 
@@ -99,6 +100,7 @@
                 <input type="tel"
                        name="phone"
                        autocomplete="tel"
+                       title="Please enter a valid telephone contact number."
                        required>
             </label>
 
@@ -107,6 +109,7 @@
                 <input type="text"
                        name="organization"
                        autocomplete="organization"
+                       title="Please enter your official business or organization name."
                        required>
             </label>
 
@@ -136,7 +139,7 @@
 
             <label>
                 Business Description
-                <textarea name="description" title="Describe your organization"></textarea>
+                <textarea name="description" title="Provide a brief summary profile describing your organization"></textarea>
             </label>
 
             <input type="submit" value="Become a Member">
@@ -178,25 +181,25 @@
 <dialog id="np-modal">
     <h2>NP Membership Benefits</h2>
     <p>No fee. Basic listing and community access.</p>
-    <button onclick="this.closest('dialog').close()">Close</button>
+    <button type="button">Close</button>
 </dialog>
 
 <dialog id="bronze-modal">
     <h2>Bronze Membership Benefits</h2>
     <p>Business listing, networking events, and promotional exposure.</p>
-    <button onclick="this.closest('dialog').close()">Close</button>
+    <button type="button">Close</button>
 </dialog>
 
 <dialog id="silver-modal">
     <h2>Silver Membership Benefits</h2>
     <p>Event discounts, spotlight features, and increased visibility.</p>
-    <button onclick="this.closest('dialog').close()">Close</button>
+    <button type="button">Close</button>
 </dialog>
 
 <dialog id="gold-modal">
     <h2>Gold Membership Benefits</h2>
     <p>Premium advertising, homepage spotlight, and VIP networking access.</p>
-    <button onclick="this.closest('dialog').close()">Close</button>
+    <button type="button">Close</button>
 </dialog>
 
 <footer>
@@ -233,11 +236,6 @@
 
     </div>
 </footer>
-
-<script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = "Last Modification: " + document.lastModified;
-</script>
 
 </body>
 </html>

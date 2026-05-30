@@ -1,33 +1,46 @@
-// Dynamic Year Handler
-const yearEl = document.querySelector("#year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+/**
+ * Global Component Utilities (Header, Navigation, and Footer Meta)
+ * Class Project: Lagos Chamber of Commerce
+ * Author: Solomon Oluwadunsin Falabake
+ */
 
-// Strict Modification Localization Tracker
-const lastModEl = document.querySelector("#lastModified");
-if (lastModEl) {
-    const date = new Date(document.lastModified);
-    lastModEl.textContent = `Last Modification: ${date.toLocaleString()}`;
-}
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // ================= DYNAMIC FOOTER META =================
+    const yearEl = document.querySelector("#year");
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 
-// Accessible Context Navigation Menu
-const menuToggle = document.querySelector("#menu-toggle");
-const nav = document.querySelector("#navigation");
+    // Strict Modification Localization Tracker
+    const lastModEl = document.querySelector("#lastModified");
+    if (lastModEl) {
+        const date = new Date(document.lastModified);
+        lastModEl.textContent = `Last Modification: ${date.toLocaleString()}`;
+    }
 
-if (menuToggle && nav) {
-    menuToggle.setAttribute("aria-expanded", "false");
+    // ================= ACCESSIBLE NAVIGATION MENU =================
+    const menuToggle = document.querySelector("#menu-toggle");
+    const nav = document.querySelector("#navigation");
 
-    menuToggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("open");
-        menuToggle.textContent = open ? "✕" : "☰";
-        menuToggle.setAttribute("aria-expanded", open);
-    });
+    if (menuToggle && nav) {
+        // Initialize explicit accessibility state
+        menuToggle.setAttribute("aria-expanded", "false");
 
-    // Event delegation closing layout safely upon target selections
-    nav.addEventListener("click", (e) => {
-        if (e.target.tagName === "A") {
-            nav.classList.remove("open");
-            menuToggle.textContent = "☰";
-            menuToggle.setAttribute("aria-expanded", "false");
-        }
-    });
-}
+        // Primary toggle button control listener
+        menuToggle.addEventListener("click", () => {
+            const isOpen = nav.classList.toggle("open");
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        // Event delegation closing layout safely upon target selections
+        nav.addEventListener("click", (e) => {
+            if (e.target.tagName === "A") {
+                nav.classList.remove("open");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+});
