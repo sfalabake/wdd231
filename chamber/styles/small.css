@@ -200,102 +200,29 @@ main {
     border: 0;
 }
 
-/* Structural Layout Flex Containers Grouped */
-.info-grid,
-.spotlight-grid,
-#member-container.list,
-.membership-cards,
-.join-layout {
+/* ================= STRUCTURAL CORE PANELS ================= */
+.info-grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-}
-
-.info-grid,
-.spotlight-grid,
-#member-container.grid {
     margin-bottom: 2rem;
-}
-
-#member-container {
-    padding: 1rem 0;
-}
-
-#member-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Card Structural Blocks Grouped */
-.info-grid .card,
-.spotlight-card,
-#member-container.grid .member-card,
-.membership-cards .card {
-    border-radius: 6px;
-    display: flex;
-    flex-direction: column;
 }
 
 .info-grid .card {
     background-color: var(--card-bg);
     border: 2px solid var(--border-dark);
+    border-radius: 4px;
     overflow: hidden;
-}
-
-.spotlight-card,
-#member-container.grid .member-card {
-    background-color: #dbdbdb;
-    border: 1px solid #b5b5b5;
-    padding: 15px;
-}
-
-/* Typography Inside Component Cards Grouped */
-.info-grid .card h3,
-.spotlight-card h4,
-#member-container.grid .member-card h3 {
-    margin: 0;
-    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-grid .card h3 {
     background-color: #333333;
     color: var(--white);
+    margin: 0;
     padding: 12px 15px;
-}
-
-.spotlight-card h4,
-#member-container.grid .member-card h3 {
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 4px;
-}
-
-.spotlight-card .tagline,
-#member-container.grid .member-card .tagline {
-    font-style: italic;
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-/* Horizontal Rule Definitions Grouped */
-.info-grid .card-body hr,
-.spotlight-card hr,
-#member-container.grid .member-card hr {
-    border: 0;
-    margin: 10px 0;
-    width: 100%;
-}
-
-.info-grid .card-body hr {
-    border-top: 1px solid var(--border-neutral);
-}
-
-.spotlight-card hr,
-#member-container.grid .member-card hr {
-    border-top: 1px solid #b5b5b5;
+    font-size: 1.1rem;
 }
 
 .info-grid .card-body {
@@ -304,7 +231,13 @@ main {
     flex-grow: 1;
 }
 
-/* Weather Component Elements */
+.info-grid .card-body hr {
+    border: 0;
+    border-top: 1px solid var(--border-neutral);
+    margin: 10px 0;
+    width: 100%;
+}
+
 .weather-current {
     display: flex;
     flex-direction: column;
@@ -324,7 +257,60 @@ main {
     margin: 0 0 0.5rem 0;
 }
 
-/* Spotlight and Split Component Layouts Grouped */
+/* ================= SPOTLIGHT & MEMBER CONTAINERS ================= */
+.spotlight-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+#member-container {
+    padding: 1rem 0;
+}
+
+#member-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.spotlight-card,
+#member-container.grid .member-card {
+    background-color: #dbdbdb;
+    border: 1px solid #b5b5b5;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.spotlight-card h4,
+#member-container.grid .member-card h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.spotlight-card .tagline,
+#member-container.grid .member-card .tagline {
+    font-style: italic;
+    color: var(--text-dark);
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.spotlight-card hr,
+#member-container.grid .member-card hr {
+    border: 0;
+    border-top: 1px solid #b5b5b5;
+    margin: 10px 0;
+    width: 100%;
+}
+
 .spotlight-details,
 .card-split-details {
     display: flex;
@@ -381,17 +367,16 @@ main {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: var(--white);
+    margin-top: 6px;
 }
 
 .membership-badge {
-    margin-top: 6px;
     padding: 2px 8px;
     border-radius: 3px;
 }
 
 .membership-block-badge {
     align-self: flex-start;
-    margin-top: 6px;
     padding: 4px 10px;
     font-weight: 700;
     border-radius: 4px;
@@ -412,6 +397,12 @@ main {
 }
 
 /* ================= DIRECTORY LIST-VIEW STATE RESET ================= */
+#member-container.list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 #member-container.list .member-card {
     background: var(--white);
     border: 1px solid var(--border-light);
@@ -422,7 +413,13 @@ main {
     gap: 0.25rem;
 }
 
-/* ================= FORM COMPONENTS ================= */
+/* ================= JOIN PAGE & LAYOUTS ================= */
+.join-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .form-section form {
     display: flex;
     flex-direction: column;
@@ -438,6 +435,7 @@ main {
     flex-direction: column;
     font-weight: 500;
     gap: 0.3rem;
+    color: var(--text-dark);
 }
 
 .form-section input,
@@ -446,6 +444,7 @@ main {
     padding: 0.65rem;
     border: 1px solid var(--border-neutral);
     border-radius: 4px;
+    font-family: inherit;
 }
 
 .form-section input:focus,
@@ -504,10 +503,22 @@ input[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-/* ================= MEMBERSHIP CARDS ================= */
+/* ================= MEMBERSHIP ANIMATED CARDS ================= */
+.membership-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.membership-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .membership-cards .card {
     background: var(--card-bg);
     border: 1px solid var(--border-dark);
+    border-radius: 6px;
     padding: 1rem;
     text-align: center;
     animation: fadeInUp 0.8s ease forwards;
@@ -543,7 +554,7 @@ input[type="submit"]:hover {
     text-decoration: none;
 }
 
-/* ================= MODALS ================= */
+/* ================= INTERACTIVE MODALS ================= */
 dialog {
     border: none;
     border-radius: 6px;
@@ -571,7 +582,7 @@ dialog button {
     cursor: pointer;
 }
 
-/* ================= THANK YOU PAGE ================= */
+/* ================= THANK YOU GATEWAY ================= */
 .thankyou-main {
     display: flex;
     justify-content: center;
@@ -595,6 +606,7 @@ dialog button {
 
 .thankyou-message {
     margin-bottom: 1.5rem;
+    color: var(--text-dark);
 }
 
 #summary p {
@@ -668,7 +680,7 @@ footer {
     transform: scale(1.1);
 }
 
-/* ================= RESPONSIVE VIEWPORT BREAKPOINTS ================= */
+/* ================= MEDIA BREAKPOINTS ================= */
 @media screen and (max-width: 345px) {
     .brand-title {
         font-size: 1.02rem;
