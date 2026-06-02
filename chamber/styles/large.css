@@ -37,7 +37,7 @@
 
     #navigation a {
         padding: 0.6rem 1.2rem;
-        background: none;
+        background: transparent;
     }
 
     #navigation a:hover,
@@ -69,7 +69,7 @@
     }
 
     /* ===== DIRECTORY LIST VIEW ===== */
-    #member-container.list .member-card {
+    .list .member-card {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
@@ -77,14 +77,14 @@
         text-align: left;
     }
 
-    #member-container.list .member-card h3 {
+    .list .member-card h3 {
         margin: 0;
         flex: 2;
         font-size: 1.25rem;
     }
 
-    #member-container.list .member-card p,
-    #member-container.list .member-card a {
+    .list .member-card p,
+    .list .member-card a {
         margin: 0;
         flex: 1.5;
     }
@@ -132,7 +132,7 @@
 /* ================= DESKTOP GRID EXPANSION (1024px+) ================= */
 @media (min-width: 1024px) {
 
-    #member-container.grid {
+    .grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
