@@ -11,7 +11,7 @@
     --card-bg: #eaeaea;
     --card-body-bg: #e0e0e0;
     --text-dark: #333333;
-    --text-muted: #575757; /* Updated from #666666 to fix header subtitle contrast */
+    --text-muted: #575757;
     --white: #ffffff;
     --border-light: #dddddd;
     --border-neutral: #cccccc;
@@ -46,11 +46,9 @@ header {
     align-items: center;
     gap: 0.75rem;
     flex: 0 1 calc(100% - 55px);
-    /* Ensures the branding never collides with the toggle button */
     min-width: 0;
 }
 
-/* Explicit constraint to protect layout alignment from raw image sizing */
 .logo-area img {
     width: 44px;
     height: auto;
@@ -60,7 +58,6 @@ header {
 
 .brand-title {
     font-size: 1.15rem;
-    /* Standardized for fluid scaling across 320px-400px viewports */
     font-weight: 700;
     margin: 0;
     color: var(--primary-color);
@@ -102,7 +99,6 @@ header nav {
     padding: 0;
     margin: 0.75rem 0 0 0;
     gap: 0.35rem;
-    /* Optimizes proximity; links stay cohesive without bloating the viewport */
 }
 
 #navigation.open {
@@ -115,13 +111,11 @@ header nav {
 
 #navigation a {
     padding: 0.65rem 1rem;
-    /* Clean mobile touch targets that maximize vertical viewport space */
     display: block;
     text-align: center;
     text-decoration: none;
     color: var(--text-dark);
     background: rgba(0, 0, 0, 0.04);
-    /* Soft background block repetition for distinct visual cues */
     border-radius: 4px;
     font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease;
@@ -206,29 +200,102 @@ main {
     border: 0;
 }
 
-/* Home Page Info Grid Blocks Stacked by Default (Mobile View) */
-.info-grid {
+/* Structural Layout Flex Containers Grouped */
+.info-grid,
+.spotlight-grid,
+#member-container.list,
+.membership-cards,
+.join-layout {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+}
+
+.info-grid,
+.spotlight-grid,
+#member-container.grid {
     margin-bottom: 2rem;
+}
+
+#member-container {
+    padding: 1rem 0;
+}
+
+#member-container.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Card Structural Blocks Grouped */
+.info-grid .card,
+.spotlight-card,
+#member-container.grid .member-card,
+.membership-cards .card {
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 .info-grid .card {
     background-color: var(--card-bg);
     border: 2px solid var(--border-dark);
-    border-radius: 4px;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
+}
+
+.spotlight-card,
+#member-container.grid .member-card {
+    background-color: #dbdbdb;
+    border: 1px solid #b5b5b5;
+    padding: 15px;
+}
+
+/* Typography Inside Component Cards Grouped */
+.info-grid .card h3,
+.spotlight-card h4,
+#member-container.grid .member-card h3 {
+    margin: 0;
+    font-size: 1.1rem;
 }
 
 .info-grid .card h3 {
     background-color: #333333;
     color: var(--white);
-    margin: 0;
     padding: 12px 15px;
-    font-size: 1.1rem;
+}
+
+.spotlight-card h4,
+#member-container.grid .member-card h3 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.spotlight-card .tagline,
+#member-container.grid .member-card .tagline {
+    font-style: italic;
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Horizontal Rule Definitions Grouped */
+.info-grid .card-body hr,
+.spotlight-card hr,
+#member-container.grid .member-card hr {
+    border: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.info-grid .card-body hr {
+    border-top: 1px solid var(--border-neutral);
+}
+
+.spotlight-card hr,
+#member-container.grid .member-card hr {
+    border-top: 1px solid #b5b5b5;
 }
 
 .info-grid .card-body {
@@ -237,13 +304,7 @@ main {
     flex-grow: 1;
 }
 
-.info-grid .card-body hr {
-    border: 0;
-    border-top: 1px solid var(--border-neutral);
-    margin: 10px 0;
-    width: 100%;
-}
-
+/* Weather Component Elements */
 .weather-current {
     display: flex;
     flex-direction: column;
@@ -263,62 +324,7 @@ main {
     margin: 0 0 0.5rem 0;
 }
 
-/* ================= GRID CONTAINERS & INNER CARD LAYOUTS ================= */
-.spotlight-grid,
-#member-container.grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-#member-container {
-    padding: 1rem 0;
-}
-
-#member-container.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* Combined Gray Card Panels */
-.spotlight-card,
-#member-container.grid .member-card {
-    background-color: #dbdbdb;
-    border: 1px solid #b5b5b5;
-    border-radius: 6px;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Unified Card Typography & Rules */
-.spotlight-card h4,
-#member-container.grid .member-card h3 {
-    margin: 0 0 4px 0;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.spotlight-card .tagline,
-#member-container.grid .member-card .tagline {
-    font-style: italic;
-    color: var(--text-dark); /* Updated from var(--text-muted) to pass on gray background */
-    margin: 0 0 10px 0;
-    font-size: 0.9rem;
-    text-align: center;
-}
-
-.spotlight-card hr,
-#member-container.grid .member-card hr {
-    border: 0;
-    border-top: 1px solid #b5b5b5;
-    margin: 10px 0;
-    width: 100%;
-}
-
-/* Consolidated Split View Flex Containers */
+/* Spotlight and Split Component Layouts Grouped */
 .spotlight-details,
 .card-split-details {
     display: flex;
@@ -327,7 +333,6 @@ main {
     text-align: left;
 }
 
-/* Square Graphic Box Placeholders */
 .spotlight-details .img-box,
 .card-split-details .img-box {
     width: 85px;
@@ -348,7 +353,6 @@ main {
     object-fit: contain;
 }
 
-/* Text Detail Wrappers */
 .spotlight-details .contact-info,
 .card-split-details .contact-info {
     font-size: 0.85rem;
@@ -365,7 +369,7 @@ main {
 
 .spotlight-details .contact-info a,
 .card-split-details .contact-info a {
-    color: var(--primary-color); /* Swapped from var(--accent-color) to pass on gray panels */
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 500;
 }
@@ -379,14 +383,12 @@ main {
     color: var(--white);
 }
 
-/* Ribbon badge variant (Home page variant) */
 .membership-badge {
-    margin-top: 6px !important;
+    margin-top: 6px;
     padding: 2px 8px;
     border-radius: 3px;
 }
 
-/* Block badge variant (Directory grid variant) */
 .membership-block-badge {
     align-self: flex-start;
     margin-top: 6px;
@@ -398,12 +400,11 @@ main {
 .membership-badge.gold,
 .membership-block-badge.gold {
     background-color: #8a6d00;
-    color: var(--white);
 }
 
 .membership-badge.silver,
 .membership-block-badge.silver {
-    background-color: #595959; /* Darkened from #7a7a7a to pass WCAG AA for white text */
+    background-color: #595959;
 }
 
 .membership-block-badge.member {
@@ -411,12 +412,6 @@ main {
 }
 
 /* ================= DIRECTORY LIST-VIEW STATE RESET ================= */
-#member-container.list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
 #member-container.list .member-card {
     background: var(--white);
     border: 1px solid var(--border-light);
@@ -427,75 +422,7 @@ main {
     gap: 0.25rem;
 }
 
-/* ================= FOOTER BASE (MOBILE) ================= */
-footer {
-    background: var(--bg-footer);
-    padding: 2.5rem 1rem;
-    border-top: 1px solid var(--border-light);
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer-content>div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.footer-content p {
-    margin: 0;
-}
-
-.footer-content .social-links {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1.25rem;
-}
-
-.footer-content .social-links img {
-    width: 36px;
-    height: 36px;
-    transition: transform 0.2s ease;
-}
-
-.footer-content .social-links img:hover {
-    transform: scale(1.1);
-}
-
-/* ================= ULTRA-NARROW SCREEN LAYOUT BREAKPOINT (320px - 345px) ================= */
-@media screen and (max-width: 345px) {
-    .brand-title {
-        font-size: 1.02rem;
-    }
-
-    .logo-area div p {
-        font-size: 0.75rem;
-    }
-
-    #navigation a {
-        padding: 0.55rem 1rem;
-        /* Structural compression for minimal viewports */
-    }
-}
-
-/* ================= JOIN PAGE LAYOUT ================= */
-
-.join-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* ================= FORM ================= */
-
+/* ================= FORM COMPONENTS ================= */
 .form-section form {
     display: flex;
     flex-direction: column;
@@ -511,7 +438,6 @@ footer {
     flex-direction: column;
     font-weight: 500;
     gap: 0.3rem;
-    color: var(--text-dark);
 }
 
 .form-section input,
@@ -520,7 +446,6 @@ footer {
     padding: 0.65rem;
     border: 1px solid var(--border-neutral);
     border-radius: 4px;
-    font-family: inherit;
 }
 
 .form-section input:focus,
@@ -530,7 +455,6 @@ footer {
     border-color: var(--accent-color);
 }
 
-/* Fieldset styling */
 fieldset {
     border: 1px solid var(--border-neutral);
     padding: 1rem;
@@ -542,7 +466,6 @@ legend {
     color: var(--primary-color);
 }
 
-/* Radio Button Group Alignment Fix */
 .form-section .radio-row {
     display: flex;
     flex-direction: row;
@@ -552,7 +475,6 @@ legend {
     margin-bottom: 0.8rem;
 }
 
-/* Override the global label column behavior for radio buttons */
 .form-section .radio-row label {
     display: inline-block; 
     font-weight: 400;
@@ -566,7 +488,6 @@ legend {
     cursor: pointer;
 }
 
-/* Submit button */
 input[type="submit"] {
     background: var(--primary-color);
     color: var(--white);
@@ -584,32 +505,15 @@ input[type="submit"]:hover {
 }
 
 /* ================= MEMBERSHIP CARDS ================= */
-
-.membership-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.membership-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-/* Base card */
 .membership-cards .card {
     background: var(--card-bg);
     border: 1px solid var(--border-dark);
-    border-radius: 6px;
     padding: 1rem;
     text-align: center;
-
-    /* REQUIRED: entry animation (NOT hover-based) */
     animation: fadeInUp 0.8s ease forwards;
     opacity: 0;
 }
 
-/* Staggered animation */
 .membership-cards .card:nth-child(1) { animation-delay: 0.1s; }
 .membership-cards .card:nth-child(2) { animation-delay: 0.2s; }
 .membership-cards .card:nth-child(3) { animation-delay: 0.3s; }
@@ -640,7 +544,6 @@ input[type="submit"]:hover {
 }
 
 /* ================= MODALS ================= */
-
 dialog {
     border: none;
     border-radius: 6px;
@@ -668,31 +571,7 @@ dialog button {
     cursor: pointer;
 }
 
-/* ================= DESKTOP JOIN LAYOUT ================= */
-
-@media (min-width: 768px) {
-
-    .join-layout {
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .form-section {
-        flex: 2;
-    }
-
-    .membership-section {
-        flex: 1;
-    }
-
-    .membership-cards {
-        position: sticky;
-        top: 1rem;
-    }
-}
-
 /* ================= THANK YOU PAGE ================= */
-
 .thankyou-main {
     display: flex;
     justify-content: center;
@@ -716,7 +595,6 @@ dialog button {
 
 .thankyou-message {
     margin-bottom: 1.5rem;
-    color: var(--text-dark);
 }
 
 #summary p {
@@ -745,4 +623,82 @@ dialog button {
 
 .btn-secondary {
     background: var(--accent-color);
+}
+
+/* ================= FOOTER BASE (MOBILE) ================= */
+footer {
+    background: var(--bg-footer);
+    padding: 2.5rem 1rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-content .social-links {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.footer-content .social-links img {
+    width: 36px;
+    height: 36px;
+    transition: transform 0.2s ease;
+}
+
+.footer-content .social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* ================= RESPONSIVE VIEWPORT BREAKPOINTS ================= */
+@media screen and (max-width: 345px) {
+    .brand-title {
+        font-size: 1.02rem;
+    }
+
+    .logo-area div p {
+        font-size: 0.75rem;
+    }
+
+    #navigation a {
+        padding: 0.55rem 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .join-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .form-section {
+        flex: 2;
+    }
+
+    .membership-section {
+        flex: 1;
+    }
+
+    .membership-cards {
+        position: sticky;
+        top: 1rem;
+    }
 }
