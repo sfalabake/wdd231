@@ -127,9 +127,9 @@ header nav {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#navigation a:hover,
-#navigation a.active {
-    background: var(--primary-color);
+header nav #navigation li a:hover,
+header nav #navigation li a.active {
+    background-color: var(--primary-color);
     color: var(--white);
 }
 
