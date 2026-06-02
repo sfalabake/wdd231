@@ -11,7 +11,7 @@
     --card-bg: #eaeaea;
     --card-body-bg: #e0e0e0;
     --text-dark: #333333;
-    --text-muted: #666666;
+    --text-muted: #575757; /* Updated from #666666 to fix header subtitle contrast */
     --white: #ffffff;
     --border-light: #dddddd;
     --border-neutral: #cccccc;
@@ -304,7 +304,7 @@ main {
 .spotlight-card .tagline,
 #member-container.grid .member-card .tagline {
     font-style: italic;
-    color: var(--text-muted);
+    color: var(--text-dark); /* Updated from var(--text-muted) to pass on gray background */
     margin: 0 0 10px 0;
     font-size: 0.9rem;
     text-align: center;
@@ -365,7 +365,7 @@ main {
 
 .spotlight-details .contact-info a,
 .card-split-details .contact-info a {
-    color: var(--accent-color);
+    color: var(--primary-color); /* Updated from var(--accent-color) to pass on gray background */
     text-decoration: none;
     font-weight: 500;
 }
