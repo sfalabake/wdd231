@@ -5,18 +5,32 @@
    ========================================================================== */
 
 :root {
-    --primary-color: #003087;
-    --accent-color: #0066cc;
-    --light-bg: #f8f9fa;
-    --card-bg: #eaeaea;
-    --card-body-bg: #e0e0e0;
-    --text-dark: #333333;
-    --text-muted: #575757;
-    --white: #ffffff;
-    --border-light: #dddddd;
-    --border-neutral: #cccccc;
-    --border-dark: #777777;
-    --bg-footer: #f1f1f1;
+  --primary-color: #003087;
+  --accent-color: #004d99; /* Updated for contrast */
+  --light-bg: #f8f9fa;
+  --card-bg: #eaeaea;
+  --card-body-bg: #e0e0e0;
+  --text-dark: #333333;
+  --text-muted: #575757;
+  --white: #ffffff;
+  --border-light: #dddddd;
+  --border-neutral: #cccccc;
+  --border-dark: #777777;
+  --bg-footer: #f1f1f1;
+  
+  /* Additional layout variables from the final refactor */
+  --bg-spot: #dbdbdb;
+  --brd-spot: #b5b5b5;
+  --bg-img: #c5c5c5;
+  --brd-img: #999999;
+  --gold: #8a6d00;
+  --silver: #595959;
+  --mbr: #555555;
+  --dark-bg: #333333;
+  --hero-bg: #003087e6;
+  --backdrop: #00000080;
+  
+  --nav-bg: #ffffff; /* Updated for transparent menu fix */
 }
 
 * {
