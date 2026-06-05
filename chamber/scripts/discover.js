@@ -26,11 +26,13 @@ function handleVisitMessage() {
 
     if (messageBox) messageBox.textContent = message;
 
-    localStorage.setItem("lastVisit", now);
+    localStorage.setItem("lastVisit", String(now));
 }
 
 // ================= BUILD CARDS =================
 function buildCards() {
+    if (!grid || !Array.isArray(places)) return;
+
     grid.innerHTML = "";
 
     places.forEach((place, index) => {
@@ -50,7 +52,7 @@ function buildCards() {
 
             <p>${place.description}</p>
 
-            <button>Learn More</button>
+            <button type="button">Learn More</button>
         `;
 
         grid.appendChild(card);
