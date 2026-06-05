@@ -1,0 +1,115 @@
+/* =========================
+   Tech Tools Directory Site Plan Styles
+   ========================= */
+
+:root {
+    --primary: #003366;
+    --secondary: #00A6A6;
+    --background: #F4F4F4;
+    --text: #333333;
+    --white: #ffffff;
+}
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header p {
+    margin-top: 0.5rem;
+}
+
+/* Main Layout */
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+}
+
+section {
+    background: var(--white);
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 6px solid var(--secondary);
+    border-radius: 5px;
+}
+
+/* Headings */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-top: 1rem;
+}
+
+/* Color Boxes */
+.color-box {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    color: var(--text);
+    border: 1px solid #ccc;
+}
+
+.primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.accent {
+    background-color: var(--background);
+}
+
+.text {
+    background-color: #e0e0e0;
+}
+
+/* Wireframe */
+pre {
+    background: #eee;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: var(--primary);
+    color: var(--white);
+    padding: 1rem;
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
