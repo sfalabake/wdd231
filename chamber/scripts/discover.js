@@ -1,5 +1,10 @@
-import { places } from "../data/discover.mjs";
+/* ==========================================================================
+Course Assignment: Chamber of Commerce Discover Page Script
+Author: Solomon Oluwadunsin Falabake
+File: discover.js
+========================================================================== */
 
+const jsonUrl = "data/discover.json";
 const grid = document.querySelector("#discover-grid");
 const messageBox = document.querySelector("#visit-message");
 
@@ -7,7 +12,6 @@ const messageBox = document.querySelector("#visit-message");
 function handleVisitMessage() {
     const lastVisit = localStorage.getItem("lastVisit");
     const now = Date.now();
-
     let message = "";
 
     if (!lastVisit) {
@@ -25,44 +29,67 @@ function handleVisitMessage() {
     }
 
     if (messageBox) messageBox.textContent = message;
-
     localStorage.setItem("lastVisit", String(now));
 }
 
-// ================= BUILD CARDS =================
-function buildCards() {
-    if (!grid || !Array.isArray(places)) return;
+// ================= ASYNC FETCH & CARD BUILDER =================
+async function loadDiscoverCards() {
+    if (!grid) return;
 
-    grid.innerHTML = "";
+    try {
+        const response = await fetch(jsonUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const places = data.places;
 
-    places.forEach((place, index) => {
-        const card = document.createElement("article");
-        card.classList.add("discover-card");
+        if (!Array.isArray(places)) return;
 
-        card.innerHTML = `
-            <h2>${place.name}</h2>
+        grid.innerHTML = "";
 
-            <figure>
-                <img src="images/${place.image}"
-                     alt="${place.name}"
-                     loading="lazy">
-            </figure>
+        places.forEach((place, index) => {
+            const card = document.createElement("article");
+            card.classList.add("discover-card");
 
-            <address>${place.address}</address>
+            card.innerHTML = `
+                <h2>${place.name}</h2>
 
-            <p>${place.description}</p>
+                <figure>
+                    <img src="images/${place.image}"
+                         alt="${place.name}"
+                         loading="lazy">
+                </figure>
 
-            <button type="button">Learn More</button>
-        `;
+                <address>${place.address}</address>
 
-        grid.appendChild(card);
+                <p>${place.description}</p>
 
-        // grid-area assignment (REQUIRED for named areas)
-        card.style.gridArea = `card${index + 1}`;
-    });
+                <button type="button">Learn More</button>
+            `;
+
+            grid.appendChild(card);
+
+            // Dynamic grid-area assignment mapping to matching CSS selectors
+            card.style.gridArea = `card${index + 1}`;
+        });
+    } catch (error) {
+        console.error("Error fetching or parsing discover layout data:", error);
+    }
 }
 
+// ================= DYNAMIC LAST MODIFICATION SCRIPT =================
+function setLastModification() {
+    const modifyField = document.querySelector("#lastModified") || document.querySelector("footer p:last-of-type");
+    if (modifyField) {
+        modifyField.textContent = `Last Modification: ${document.lastModified}`;
+    }
+}
+
+// ================= INITIALIZATION CORE =================
 document.addEventListener("DOMContentLoaded", () => {
-    buildCards();
+    loadDiscoverCards();
     handleVisitMessage();
+    setLastModification();
 });
