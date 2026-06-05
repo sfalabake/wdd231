@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Discover Lagos | Lagos Chamber of Commerce</title>
+
+    <meta name="description" content="Discover key business locations, attractions, and economic highlights in Lagos, Nigeria.">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+
+    <!-- Favicon (FIXED) -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Discover Lagos Business Environment">
+    <meta property="og:description" content="Explore Lagos business attractions and economic opportunities.">
+    <meta property="og:image" content="https://sfalabake.github.io/wdd231/chamber/images/home-image.webp">
+    <meta property="og:url" content="https://sfalabake.github.io/wdd231/chamber/discover.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JS -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/discover.js" defer type="module"></script>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-area">
+        <img src="images/coc-logo.png" alt="Lagos Chamber Logo" width="70" height="70">
+        <div>
+            <h2 class="brand-title">Lagos Chamber of Commerce</h2>
+            <p>Empowering Business in Lagos</p>
+        </div>
+    </div>
+
+    <button id="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" aria-controls="navigation">☰</button>
+
+    <nav aria-label="Main navigation">
+        <ul id="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <h1 class="page-title">Discover Lagos</h1>
+
+    <!-- LOCAL STORAGE VISIT MESSAGE -->
+    <div id="visit-message" class="visit-message"></div>
+
+    <!-- GRID CONTAINER -->
+    <section id="discover-grid" class="discover-grid"></section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <h2>Lagos Chamber of Commerce</h2>
+            <p>1 Commerce House, Lagos Island</p>
+            <p>Lagos, Nigeria</p>
+            <p>info@lagoschamber.ng</p>
+            <p>(234) 01-555-2300</p>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><img src="images/youtube.svg" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+        </div>
+
+        <div class="footer-meta">
+            <p>&copy; <span id="year"></span> Lagos Chamber</p>
+            <p id="lastModified"></p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
