@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tech Tools Directory | Submit Tool</title>
+
+    <meta name="description"
+        content="Recommend a useful technology tool for inclusion in the Tech Tools Directory.">
+
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tech Tools Directory | Submit Tool">
+    <meta property="og:description"
+        content="Submit your favorite development, design, productivity, or learning tool.">
+    <meta property="og:image"
+        content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
+    <meta property="og:url"
+        content="https://sfalabake.github.io/wdd231/finalproject/submit.html">
+    <meta property="og:type" content="website">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+
+        <h1>Tech Tools Directory</h1>
+
+        <button id="menuBtn" aria-label="Navigation Menu">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="submit.html" class="active">Submit Tool</a></li>
+        </ul>
+
+        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+
+    </nav>
+</header>
+
+<main>
+
+    <section class="form-section">
+
+        <h2>Recommend a Tool</h2>
+
+        <p>
+            Know a useful tool that should be added to our directory?
+            Submit it using the form below.
+        </p>
+
+        <form method="get" action="thankyou.html">
+
+            <label>
+                Full Name
+                <input
+                    type="text"
+                    name="fullname"
+                    required
+                    title="Please enter your full name">
+            </label>
+
+            <label>
+                Email Address
+                <input
+                    type="email"
+                    name="email"
+                    required>
+            </label>
+
+            <label>
+                Tool Name
+                <input
+                    type="text"
+                    name="toolname"
+                    required>
+            </label>
+
+            <label>
+                Category
+                <select name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="Development">Development</option>
+                    <option value="Design">Design</option>
+                    <option value="Productivity">Productivity</option>
+                    <option value="Collaboration">Collaboration</option>
+                    <option value="Learning">Learning</option>
+                </select>
+            </label>
+
+            <label>
+                Tool Website
+                <input
+                    type="url"
+                    name="website"
+                    required>
+            </label>
+
+            <label>
+                Comments
+                <textarea
+                    name="comments"
+                    rows="5"></textarea>
+            </label>
+
+            <input
+                type="submit"
+                value="Submit Recommendation">
+
+        </form>
+
+    </section>
+
+</main>
+
+<footer>
+    <div class="footer-content">
+
+        <div class="footer-info">
+            <h2>Tech Tools Directory</h2>
+            <p>Curated digital resources for modern professionals.</p>
+            <p>Lagos, Nigeria</p>
+            <p>info@techtoolsdirectory.com</p>
+        </div>
+
+        <div class="social-links">
+
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/github.svg" alt="GitHub">
+            </a>
+
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/twitter.svg" alt="Twitter">
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="images/linkedin.svg" alt="LinkedIn">
+            </a>
+
+        </div>
+
+        <div class="footer-meta">
+            <p>WDD231 Final Project</p>
+            <p>Solomon Oluwadunsin Falabake</p>
+            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
+            <p id="lastModified"></p>
+
+            <p>
+                <a href="attributions.html">Attributions</a>
+            </p>
+
+            <p>
+                <a href="YOUR_VIDEO_LINK_HERE" target="_blank">
+                    Project Demonstration Video
+                </a>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>

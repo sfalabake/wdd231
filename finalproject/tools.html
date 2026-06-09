@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tech Tools Directory | Tools</title>
+
+    <meta name="description" content="Browse and explore 15+ essential tech tools for developers, designers, and productivity workflows.">
+    <meta name="author" content="Solomon Oluwadunsin Falabake">
+
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tech Tools Directory | Tools">
+    <meta property="og:description" content="Explore development, design, productivity, and collaboration tools.">
+    <meta property="og:image" content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
+    <meta property="og:url" content="https://sfalabake.github.io/wdd231/finalproject/tools.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/large.css">
+
+    <!-- JS Module -->
+    <script type="module" src="scripts/tools.js" defer></script>
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <h1>Tech Tools Directory</h1>
+
+        <button id="menuBtn" aria-label="Menu">☰</button>
+
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html" class="active">Tools</a></li>
+            <li><a href="submit.html">Submit Tool</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+    </nav>
+</header>
+
+<main>
+
+    <section class="controls">
+
+        <!-- Search -->
+        <input type="text" id="searchInput" placeholder="Search tools...">
+
+        <!-- Category Filters -->
+        <div class="filters">
+            <button data-category="All">All</button>
+            <button data-category="Development">Development</button>
+            <button data-category="Design">Design</button>
+            <button data-category="Productivity">Productivity</button>
+            <button data-category="Collaboration">Collaboration</button>
+            <button data-category="Learning">Learning</button>
+        </div>
+
+    </section>
+
+    <!-- Tools Grid -->
+    <section id="toolsContainer" class="grid"></section>
+
+</main>
+
+<!-- MODAL -->
+<dialog id="toolModal">
+    <div class="modal-content">
+        <button id="closeModal">✖</button>
+
+        <img id="modalImage" alt="">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <p><strong>Platform:</strong> <span id="modalPlatform"></span></p>
+        <p><strong>Price:</strong> <span id="modalPrice"></span></p>
+
+        <a id="modalLink" target="_blank">Visit Website</a>
+    </div>
+</dialog>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Visual Studio Code",
+    "category": "Development",
+    "platform": "Windows, macOS, Linux",
+    "price": "Free",
+    "description": "A powerful and lightweight code editor with rich extensions and Git integration.",
+    "website": "https://code.visualstudio.com/",
+    "image": "images/vscode.webp"
+  },
+  {
+    "id": 2,
+    "name": "GitHub",
+    "category": "Development",
+    "platform": "Web",
+    "price": "Free / Paid",
+    "description": "Platform for version control and collaborative software development using Git.",
+    "website": "https://github.com/",
+    "image": "images/github.webp"
+  },
+  {
+    "id": 3,
+    "name": "Git",
+    "category": "Development",
+    "platform": "Windows, macOS, Linux",
+    "price": "Free",
+    "description": "Distributed version control system for tracking code changes.",
+    "website": "https://git-scm.com/",
+    "image": "images/git.webp"
+  },
+  {
+    "id": 4,
+    "name": "Postman",
+    "category": "Development",
+    "platform": "Windows, macOS, Linux, Web",
+    "price": "Free / Paid",
+    "description": "API development and testing tool used by developers worldwide.",
+    "website": "https://www.postman.com/",
+    "image": "images/postman.webp"
+  },
+  {
+    "id": 5,
+    "name": "Figma",
+    "category": "Design",
+    "platform": "Web, Windows, macOS",
+    "price": "Free / Paid",
+    "description": "Collaborative interface design tool for UI/UX and prototyping.",
+    "website": "https://www.figma.com/",
+    "image": "images/figma.webp"
+  },
+  {
+    "id": 6,
+    "name": "Canva",
+    "category": "Design",
+    "platform": "Web, Mobile",
+    "price": "Free / Paid",
+    "description": "Graphic design platform for creating presentations, posters, and social media content.",
+    "website": "https://www.canva.com/",
+    "image": "images/canva.webp"
+  },
+  {
+    "id": 7,
+    "name": "Adobe Express",
+    "category": "Design",
+    "platform": "Web, Mobile",
+    "price": "Free / Paid",
+    "description": "Quick content creation tool for graphics, videos, and web pages.",
+    "website": "https://www.adobe.com/express/",
+    "image": "images/adobe-express.webp"
+  },
+  {
+    "id": 8,
+    "name": "Notion",
+    "category": "Productivity",
+    "platform": "Web, Windows, macOS, Mobile",
+    "price": "Free / Paid",
+    "description": "All-in-one workspace for notes, tasks, databases, and collaboration.",
+    "website": "https://www.notion.so/",
+    "image": "images/notion.webp"
+  },
+  {
+    "id": 9,
+    "name": "Trello",
+    "category": "Productivity",
+    "platform": "Web, Mobile",
+    "price": "Free / Paid",
+    "description": "Visual project management tool using boards, lists, and cards.",
+    "website": "https://trello.com/",
+    "image": "images/trello.webp"
+  },
+  {
+    "id": 10,
+    "name": "Todoist",
+    "category": "Productivity",
+    "platform": "Web, Mobile, Desktop",
+    "price": "Free / Paid",
+    "description": "Task management app for organizing personal and team productivity.",
+    "website": "https://todoist.com/",
+    "image": "images/todoist.webp"
+  },
+  {
+    "id": 11,
+    "name": "Slack",
+    "category": "Collaboration",
+    "platform": "Web, Desktop, Mobile",
+    "price": "Free / Paid",
+    "description": "Team communication platform with channels, messaging, and integrations.",
+    "website": "https://slack.com/",
+    "image": "images/slack.webp"
+  },
+  {
+    "id": 12,
+    "name": "Discord",
+    "category": "Collaboration",
+    "platform": "Web, Desktop, Mobile",
+    "price": "Free",
+    "description": "Communication platform for communities, voice chat, and messaging.",
+    "website": "https://discord.com/",
+    "image": "images/discord.webp"
+  },
+  {
+    "id": 13,
+    "name": "Zoom",
+    "category": "Collaboration",
+    "platform": "Web, Desktop, Mobile",
+    "price": "Free / Paid",
+    "description": "Video conferencing tool for meetings, webinars, and online communication.",
+    "website": "https://zoom.us/",
+    "image": "images/zoom.webp"
+  },
+  {
+    "id": 14,
+    "name": "freeCodeCamp",
+    "category": "Learning",
+    "platform": "Web",
+    "price": "Free",
+    "description": "Interactive platform for learning web development and programming.",
+    "website": "https://www.freecodecamp.org/",
+    "image": "images/freecodecamp.webp"
+  },
+  {
+    "id": 15,
+    "name": "MDN Web Docs",
+    "category": "Learning",
+    "platform": "Web",
+    "price": "Free",
+    "description": "Authoritative documentation for HTML, CSS, and JavaScript.",
+    "website": "https://developer.mozilla.org/",
+    "image": "images/mdn.webp"
+  }
+]
