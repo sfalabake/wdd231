@@ -40,7 +40,10 @@
 <header>
     <nav class="navbar">
 
-        <h1>Tech Tools Directory</h1>
+        <a href="index.html" class="brand">
+            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
+            <span>Tech Tools Directory</span>
+        </a>
 
         <button id="menuBtn" aria-label="Navigation Menu">☰</button>
 
@@ -59,72 +62,78 @@
 
     <section class="form-section">
 
-        <h2>Recommend a Tool</h2>
+        <div class="form-card">
 
-        <p>
-            Know a useful tool that should be added to our directory?
-            Submit it using the form below.
-        </p>
+            <h2>Submit a Tool</h2>
 
-        <form method="get" action="thankyou.html">
+            <p class="form-intro">
+                Recommend a developer, design, or productivity tool to be reviewed and added to the directory.
+            </p>
 
-            <label>
-                Full Name
-                <input
-                    type="text"
-                    name="fullname"
-                    required
-                    title="Please enter your full name">
-            </label>
+            <form method="get" action="thankyou.html" novalidate>
 
-            <label>
-                Email Address
-                <input
-                    type="email"
-                    name="email"
-                    required>
-            </label>
+                <!-- Personal Info -->
+                <fieldset>
+                    <legend>Contact Information</legend>
 
-            <label>
-                Tool Name
-                <input
-                    type="text"
-                    name="toolname"
-                    required>
-            </label>
+                    <label>
+                        Full Name *
+                        <input type="text" name="fullname" required autocomplete="name" placeholder="John Doe">
+                    </label>
 
-            <label>
-                Category
-                <select name="category" required>
-                    <option value="">Select a category</option>
-                    <option value="Development">Development</option>
-                    <option value="Design">Design</option>
-                    <option value="Productivity">Productivity</option>
-                    <option value="Collaboration">Collaboration</option>
-                    <option value="Learning">Learning</option>
-                </select>
-            </label>
+                    <label>
+                        Email Address *
+                        <input type="email" name="email" required autocomplete="email" placeholder="john@example.com">
+                    </label>
+                </fieldset>
 
-            <label>
-                Tool Website
-                <input
-                    type="url"
-                    name="website"
-                    required>
-            </label>
+                <!-- Tool Info -->
+                <fieldset>
+                    <legend>Tool Details</legend>
 
-            <label>
-                Comments
-                <textarea
-                    name="comments"
-                    rows="5"></textarea>
-            </label>
+                    <label>
+                        Tool Name *
+                        <input type="text" name="toolname" required placeholder="e.g. Figma">
+                    </label>
 
-            <input
-                type="submit"
-                value="Submit Recommendation">
+                    <label>
+                        Category *
+                        <select name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="Development">Development</option>
+                            <option value="Design">Design</option>
+                            <option value="Productivity">Productivity</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Learning">Learning</option>
+                        </select>
+                    </label>
 
-        </form>
+                    <label>
+                        Website URL *
+                        <input type="url" name="website" required placeholder="https://example.com">
+                        <small>Include https:// for validation</small>
+                    </label>
+
+                </fieldset>
+
+                <!-- Extra Info -->
+                <fieldset>
+                    <legend>Additional Notes</legend>
+
+                    <label>
+                        Comments
+                        <textarea name="comments" rows="5" placeholder="Why is this tool useful?"></textarea>
+                    </label>
+
+                </fieldset>
+
+                <button type="submit" class="submit-btn">
+                    Submit Tool
+                </button>
+
+            </form>
+
+        </div>
 
     </section>
 

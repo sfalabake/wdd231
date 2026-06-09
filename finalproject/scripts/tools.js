@@ -1,4 +1,4 @@
-import { loadTheme, toggleTheme } from "./storage.js";
+import { loadTheme, initializeThemeToggle } from "./storage.js";
 
 const container = document.querySelector("#toolsContainer");
 const searchInput = document.querySelector("#searchInput");
@@ -111,4 +111,5 @@ filterButtons.forEach(btn => {
 // INIT
 // ===============================
 loadTheme();
+initializeThemeToggle();
 getTools();
