@@ -437,3 +437,11 @@ small {
         height: 32px;
     }
 }
+
+body.dark .logo {
+    filter: brightness(0.9) contrast(1.1);
+}
+
+body.dark .logo {
+    filter: invert(1) hue-rotate(180deg);
+}
