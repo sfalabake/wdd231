@@ -24,185 +24,105 @@
 
     <script type="module" src="scripts/main.js" defer></script>
 </head>
-
 <body>
 
-<header>
-    <nav class="navbar">
-
-        <a href="index.html" class="brand">
-            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
-            <span>Tech Tools Directory</span>
-        </a>
-
-        <button id="menuBtn" aria-label="Navigation Menu">
-            ☰
-        </button>
-
-        <ul id="navLinks">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="submit.html">Submit Tool</a></li>
-        </ul>
-
-        <button id="themeToggle" aria-label="Toggle Dark Mode">
-            🌙
-        </button>
-
-    </nav>
-</header>
-
-<main>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-text">
-            <h2>Discover Essential Tech Tools</h2>
-
-            <p>
-                Explore a curated collection of development,
-                design, productivity, collaboration, and
-                learning tools that help professionals
-                work smarter and faster.
-            </p>
-
-            <a href="tools.html" class="cta-btn">
-                Browse Tools
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
+                <span>TechTools Dev</span>
             </a>
+            <button id="menuBtn" aria-label="Toggle Menu">&#9776;</button>
+            <button id="themeToggle" aria-label="Toggle Dark Mode">&#9788;</button>
+            <ul id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="submit.html">Submit Tool</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Welcome to the Tech Tools Directory</h1>
+                <p>Streamline your engineering pipeline with our highly curated directory of elite web development modules, modern design assets, and productivity framework extensions.</p>
+                <a href="tools.html" class="cta-btn">Explore Directory</a>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-coding.webp" alt="Developer working on a laptop writing code" width="600" height="400">
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>Explore Resource Categories</h2>
+            <div class="category-grid">
+                <article>
+                    <h3>Frontend Development</h3>
+                    <p>High-performance utility toolkits, modern CSS layout grid assistants, and reactive web optimization tools.</p>
+                </article>
+                <article>
+                    <h3>UI/UX Architecture</h3>
+                    <p>Typography scaling assistants, wireframing workspaces, and cohesive accessible color palette platforms.</p>
+                </article>
+                <article>
+                    <h3>DevOps & Performance</h3>
+                    <p>Automated build compressors, asset optimization applications, and dynamic runtime performance telemetry metrics.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h2>Featured Ecosystem Utilities</h2>
+            <div class="featured-grid">
+                <article class="featured-card">
+                    <h3>Visual Studio Code</h3>
+                    <p>Highly extensible source code workspace engine configured perfectly for modern web programming workflows.</p>
+                    <a href="https://code.visualstudio.com" target="_blank" rel="noopener" class="view-btn">Launch Site</a>
+                </article>
+                <article class="featured-card">
+                    <h3>GitHub Ecosystem</h3>
+                    <p>Advanced distributed version management framework providing comprehensive automated cloud compilation deployments.</p>
+                    <a href="https://github.com" target="_blank" rel="noopener" class="view-btn">Launch Site</a>
+                </article>
+                <article class="featured-card">
+                    <h3>Figma Workspace</h3>
+                    <p>Collaborative multi-user rapid wireframe design environment optimized for interface mockups.</p>
+                    <a href="https://figma.com" target="_blank" rel="noopener" class="view-btn">Launch Site</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Tech Tools Directory</h3>
+                <p>An educational frontend catalog explicitly engineered to optimize production architectures for developers' global scale workflows.</p>
+            </div>
+            <div class="footer-meta">
+                <h3>Project Information</h3>
+                <p>&copy; <span id="currentYear"></span> | Solomon Oluwadunsin Falabake</p>
+                <p class="modification-date">Last Modified: <span id="lastModificationDate"></span></p>
+            </div>
+            <div class="footer-social">
+                <h3>Developer Portal</h3>
+                <div class="social-links">
+                    <a href="https://github.com/sfalabake/wdd231" target="_blank" rel="noopener">
+                        <img src="images/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener">
+                        <img src="images/twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">
+                        <img src="images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                </div>
+                <p><a href="https://youtube.com" class="video-link">project walkthrough video</a></p>
+            </div>
         </div>
-
-        <div class="hero-image">
-            <img
-                src="images/hero-coding.webp"
-                alt="Developer working on a laptop writing code"
-                loading="eager">
-        </div>
-
-    </section>
-
-    <!-- CATEGORIES -->
-
-    <section class="categories">
-
-        <h2>Browse by Category</h2>
-
-        <div class="category-grid">
-
-            <article>
-                <h3>Development</h3>
-                <p>Code editors, version control, APIs, and development utilities.</p>
-            </article>
-
-            <article>
-                <h3>Design</h3>
-                <p>UI, UX, graphic design, and content creation tools.</p>
-            </article>
-
-            <article>
-                <h3>Productivity</h3>
-                <p>Task management, note-taking, and workflow organization.</p>
-            </article>
-
-            <article>
-                <h3>Collaboration</h3>
-                <p>Communication and teamwork platforms.</p>
-            </article>
-
-            <article>
-                <h3>Learning</h3>
-                <p>Educational resources and technical documentation.</p>
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- FEATURED TOOLS -->
-
-    <section class="featured-tools">
-
-        <h2>Featured Tools</h2>
-
-        <div id="featuredTools" class="featured-grid"></div>
-
-    </section>
-
-    <!-- BENEFITS -->
-
-    <section class="benefits">
-
-        <h2>Why Use This Directory?</h2>
-
-        <div class="benefits-grid">
-
-            <article>
-                <h3>Curated Selection</h3>
-                <p>Only trusted and widely used technology tools are included.</p>
-            </article>
-
-            <article>
-                <h3>Organized Categories</h3>
-                <p>Quickly find tools that match your workflow and goals.</p>
-            </article>
-
-            <article>
-                <h3>Easy Comparison</h3>
-                <p>Review key information including platform support and pricing.</p>
-            </article>
-
-        </div>
-
-    </section>
-
-</main>
-
-<footer>
-    <div class="footer-content">
-
-        <div class="footer-info">
-            <h2>Tech Tools Directory</h2>
-            <p>Curated digital resources for modern professionals.</p>
-            <p>Lagos, Nigeria</p>
-            <p>info@techtoolsdirectory.com</p>
-        </div>
-
-        <div class="social-links">
-
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/github.svg" alt="GitHub">
-            </a>
-
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/twitter.svg" alt="Twitter">
-            </a>
-
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/linkedin.svg" alt="LinkedIn">
-            </a>
-
-        </div>
-
-        <div class="footer-meta">
-            <p>WDD231 Final Project</p>
-            <p>Solomon Oluwadunsin Falabake</p>
-            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
-            <p id="lastModified"></p>
-
-            <p>
-                <a href="attributions.html">Attributions</a>
-            </p>
-
-            <p>
-                <a href="YOUR_VIDEO_LINK_HERE" target="_blank">
-                    Project Demonstration Video
-                </a>
-            </p>
-        </div>
-
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>

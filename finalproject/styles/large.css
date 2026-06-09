@@ -6,7 +6,12 @@
 
 @media screen and (min-width: 768px) {
 
-    /* Responsive Navigation Header Adjustments */
+    /* Layout Reset and Main Container Spacing */
+    main {
+        padding: 2.5rem 2rem;
+    }
+
+    /* Global Navigation Header - Desktop Inline Menu */
     #menuBtn {
         display: none;
     }
@@ -14,7 +19,7 @@
     .navbar #navLinks {
         display: flex;
         width: auto;
-        gap: 1rem;
+        gap: 1.5rem;
         margin: 0;
     }
 
@@ -22,38 +27,46 @@
         margin: 0;
     }
 
-    /* Hero Section Dual Columns */
+    /* Hero Section - Split Side-by-Side Dual Column Grid */
     .hero {
         grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        padding: 4rem 0;
+        align-items: center;
     }
 
     .hero-text {
         text-align: left;
     }
 
-    /* Homepage Feature Layout Columns */
+    /* Multi-Column Layout Grid Arrays */
     .category-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    .benefits-grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 
     .featured-grid {
         grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Master Tools Inventory Grid Layout Engine */
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 1.5rem;
     }
 
-    /* Unified Three-Column Footer Grid Layout */
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    /* Content Typography Realignment */
+    h2 {
+        font-size: 2.25rem;
+        margin-top: 5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    /* Comprehensive 3-Column Footer Engine Grid */
     .footer-content {
         grid-template-columns: 2fr 1fr 1fr;
         align-items: start;
-        gap: 3rem;
+        gap: 4rem;
+        padding: 4rem 2rem;
     }
 }

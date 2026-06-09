@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Tools Directory | Discover Tools</title>
+    <title>Tech Tools Directory | Attributions</title>
     
-    <meta name="description" content="Browse through our comprehensive index of curated developer resources, frameworks, and workflow components.">
+    <meta name="description" content="Asset logs, design credit attributions, and photography licenses utilized within this frontend development project.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
     <link rel="icon" href="images/favicon.ico">
 
-    <meta property="og:title" content="Tech Tools Directory | Discover Tools">
-    <meta property="og:description" content="Filter, search, and discover production-ready engineering resources.">
+    <meta property="og:title" content="Tech Tools Directory | Attributions">
+    <meta property="og:description" content="Resource credit mapping indices for media components.">
     <meta property="og:image" content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
-    <meta property="og:url" content="https://sfalabake.github.io/wdd231/finalproject/tools.html">
+    <meta property="og:url" content="https://sfalabake.github.io/wdd231/finalproject/attributions.html">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,6 @@
     <link rel="stylesheet" href="styles/large.css">
 
     <script type="module" src="scripts/main.js" defer></script>
-    <script type="module" src="scripts/tools.js" defer></script>
 </head>
 <body>
 
@@ -37,43 +36,36 @@
             <button id="themeToggle" aria-label="Toggle Dark Mode">&#9788;</button>
             <ul id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="tools.html" class="active">Tools</a></li>
+                <li><a href="tools.html">Tools</a></li>
                 <li><a href="submit.html">Submit Tool</a></li>
-                <li><a href="attributions.html">Attributions</a></li>
+                <li><a href="attributions.html" class="active">Attributions</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="controls">
-            <h1>Web Developer Resource Directory</h1>
-            <p>Filter items dynamically or query specific keyword extensions inside our interactive catalog system.</p>
+        <section class="categories-section">
+            <h1>Asset Attribution Credits</h1>
+            <p>This academic project values open source intellectual property mapping. Media assets used across our responsive views are credited below.</p>
             
-            <label for="searchInput" class="visually-hidden">Search Tech Tools</label>
-            <input type="text" id="searchInput" placeholder="Search tools...">
-            
-            <div class="filters">
-                <button data-category="All" class="filter-btn active">All</button>
-                <button data-category="Development" class="filter-btn">Development</button>
-                <button data-category="Design" class="filter-btn">Design</button>
-                <button data-category="Productivity" class="filter-btn">Productivity</button>
-                <button data-category="Collaboration" class="filter-btn">Collaboration</button>
-                <button data-category="Learning" class="filter-btn">Learning</button>
+            <div class="category-grid">
+                <article>
+                    <h3>Graphical Vector Logo</h3>
+                    <p>The "Tech Tools Directory logo" source asset icon was sourced and adapted via open community icon repositories.</p>
+                    <a href="https://unsplash.com" target="_blank" rel="noopener" class="cta-btn">Source Portal</a>
+                </article>
+                <article>
+                    <h3>Hero Content Image</h3>
+                    <p>The high-performance workspace "Developer working on a laptop" hero asset image is compiled via optimized WebP distributions.</p>
+                    <a href="https://unsplash.com" target="_blank" rel="noopener" class="cta-btn">Source Portal</a>
+                </article>
+                <article>
+                    <h3>Developer Portal Vector SVGs</h3>
+                    <p>Brand indicator assets including GitHub, Twitter, and LinkedIn vectors conform to official logo usage provisions.</p>
+                    <a href="https://simpleicons.org" target="_blank" rel="noopener" class="cta-btn">Source Portal</a>
+                </article>
             </div>
         </section>
-
-        <section class="directory-container">
-            <div class="grid-container" id="directoryGrid">
-                </div>
-        </section>
-
-        <dialog id="toolModal">
-            <div class="modal-content">
-                <button id="closeModalBtn" aria-label="Close Modal">&times;</button>
-                <div id="modalBody">
-                    </div>
-            </div>
-        </dialog>
     </main>
 
     <footer>

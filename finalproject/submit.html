@@ -3,187 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Tech Tools Directory | Submit Tool</title>
-
-    <meta name="description"
-        content="Recommend a useful technology tool for inclusion in the Tech Tools Directory.">
-
+    <title>Tech Tools Directory | Submit a Tool</title>
+    
+    <meta name="description" content="Contribute to our ecosystem database by suggesting a tool, asset framework, or optimization utility.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
-
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tech Tools Directory | Submit Tool">
-    <meta property="og:description"
-        content="Submit your favorite development, design, productivity, or learning tool.">
-    <meta property="og:image"
-        content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
-    <meta property="og:url"
-        content="https://sfalabake.github.io/wdd231/finalproject/submit.html">
+    <meta property="og:title" content="Tech Tools Directory | Submit a Tool">
+    <meta property="og:description" content="Share your preferred resources with our growing global developer catalog.">
+    <meta property="og:image" content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
+    <meta property="og:url" content="https://sfalabake.github.io/wdd231/finalproject/submit.html">
     <meta property="og:type" content="website">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
 
     <script type="module" src="scripts/main.js" defer></script>
 </head>
-
 <body>
 
-<header>
-    <nav class="navbar">
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
+                <span>TechTools Dev</span>
+            </a>
+            <button id="menuBtn" aria-label="Toggle Menu">&#9776;</button>
+            <button id="themeToggle" aria-label="Toggle Dark Mode">&#9788;</button>
+            <ul id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="submit.html" class="active">Submit Tool</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <a href="index.html" class="brand">
-            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
-            <span>Tech Tools Directory</span>
-        </a>
-
-        <button id="menuBtn" aria-label="Navigation Menu">☰</button>
-
-        <ul id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="submit.html" class="active">Submit Tool</a></li>
-        </ul>
-
-        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
-
-    </nav>
-</header>
-
-<main>
-
-    <section class="form-section">
-
-        <div class="form-card">
-
-            <h2>Submit a Tool</h2>
-
-            <p class="form-intro">
-                Recommend a developer, design, or productivity tool to be reviewed and added to the directory.
-            </p>
-
-            <form method="get" action="thankyou.html" novalidate>
-
-                <!-- Personal Info -->
+    <main>
+        <section class="form-card">
+            <h1>Suggest a Developer Tool</h1>
+            <p>Help optimize engineering pipelines globally. Submit resource entries using our accessible structured entry matrix below.</p>
+            
+            <form action="#" method="get">
                 <fieldset>
-                    <legend>Contact Information</legend>
-
-                    <label>
-                        Full Name *
-                        <input type="text" name="fullname" required autocomplete="name" placeholder="John Doe">
+                    <legend>Resource Identity Details</legend>
+                    
+                    <label>Tool Reference Name
+                        <input type="text" name="toolName" required placeholder="e.g., Tailwind CSS">
                     </label>
 
-                    <label>
-                        Email Address *
-                        <input type="email" name="email" required autocomplete="email" placeholder="john@example.com">
-                    </label>
-                </fieldset>
-
-                <!-- Tool Info -->
-                <fieldset>
-                    <legend>Tool Details</legend>
-
-                    <label>
-                        Tool Name *
-                        <input type="text" name="toolname" required placeholder="e.g. Figma">
+                    <label>Official Live Resource URL
+                        <input type="url" name="toolUrl" required placeholder="https://example.com">
                     </label>
 
-                    <label>
-                        Category *
-                        <select name="category" required>
-                            <option value="">Select a category</option>
-                            <option value="Development">Development</option>
-                            <option value="Design">Design</option>
-                            <option value="Productivity">Productivity</option>
-                            <option value="Collaboration">Collaboration</option>
-                            <option value="Learning">Learning</option>
+                    <label>Core Pipeline Category
+                        <select name="toolCategory" required>
+                            <option value="" disabled selected>Select Architecture Classification...</option>
+                            <option value="frontend">Frontend Development</option>
+                            <option value="uiux">UI/UX Interface Design</option>
+                            <option value="devops">DevOps & Performance</option>
                         </select>
                     </label>
-
-                    <label>
-                        Website URL *
-                        <input type="url" name="website" required placeholder="https://example.com">
-                        <small>Include https:// for validation</small>
-                    </label>
-
                 </fieldset>
 
-                <!-- Extra Info -->
                 <fieldset>
-                    <legend>Additional Notes</legend>
-
-                    <label>
-                        Comments
-                        <textarea name="comments" rows="5" placeholder="Why is this tool useful?"></textarea>
+                    <legend>Extended Technical Summary</legend>
+                    
+                    <label>Brief Functional Overview
+                        <textarea name="toolDescription" rows="4" required placeholder="Describe the primary capabilities and performance workflows of this software system..."></textarea>
                     </label>
-
                 </fieldset>
 
-                <button type="submit" class="submit-btn">
-                    Submit Tool
-                </button>
-
+                <button type="submit" class="submit-btn">Publish Request Entry</button>
             </form>
+        </section>
+    </main>
 
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Tech Tools Directory</h3>
+                <p>An educational frontend catalog explicitly engineered to optimize production architectures for developers' global scale workflows.</p>
+            </div>
+            <div class="footer-meta">
+                <h3>Project Information</h3>
+                <p>&copy; <span id="currentYear"></span> | Solomon Oluwadunsin Falabake</p>
+                <p class="modification-date">Last Modified: <span id="lastModificationDate"></span></p>
+            </div>
+            <div class="footer-social">
+                <h3>Developer Portal</h3>
+                <div class="social-links">
+                    <a href="https://github.com/sfalabake/wdd231" target="_blank" rel="noopener">
+                        <img src="images/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener">
+                        <img src="images/twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener">
+                        <img src="images/linkedin.svg" alt="LinkedIn">
+                    </a>
+                </div>
+                <p><a href="https://youtube.com" class="video-link">project walkthrough video</a></p>
+            </div>
         </div>
-
-    </section>
-
-</main>
-
-<footer>
-    <div class="footer-content">
-
-        <div class="footer-info">
-            <h2>Tech Tools Directory</h2>
-            <p>Curated digital resources for modern professionals.</p>
-            <p>Lagos, Nigeria</p>
-            <p>info@techtoolsdirectory.com</p>
-        </div>
-
-        <div class="social-links">
-
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/github.svg" alt="GitHub">
-            </a>
-
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/twitter.svg" alt="Twitter">
-            </a>
-
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="images/linkedin.svg" alt="LinkedIn">
-            </a>
-
-        </div>
-
-        <div class="footer-meta">
-            <p>WDD231 Final Project</p>
-            <p>Solomon Oluwadunsin Falabake</p>
-            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
-            <p id="lastModified"></p>
-
-            <p>
-                <a href="attributions.html">Attributions</a>
-            </p>
-
-            <p>
-                <a href="YOUR_VIDEO_LINK_HERE" target="_blank">
-                    Project Demonstration Video
-                </a>
-            </p>
-        </div>
-
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
