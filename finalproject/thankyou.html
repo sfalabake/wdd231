@@ -1,49 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tech Tools Directory | Submission Received</title>
-
-    <meta name="description"
-        content="Tool recommendation successfully submitted.">
-
+    <meta name="description" content="Thank you for submitting a tool recommendation to the Tech Tools Directory.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
+    <link rel="icon" href="images/favicon.ico">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
 
+    <script type="module" src="scripts/main.js" defer></script>
     <script type="module" src="scripts/thankyou.js" defer></script>
-
 </head>
-
 <body>
 
 <header>
-    <h1>Submission Received</h1>
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo" width="40" height="40">
+            <span>Tech Tools Directory</span>
+        </a>
+        <button id="menuBtn" aria-label="Navigation Menu">☰</button>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="tools.html">Tools</a></li>
+            <li><a href="submit.html">Submit Tool</a></li>
+        </ul>
+        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
 </header>
 
 <main>
-
     <section class="confirmation">
-
-        <h2>Thank You</h2>
-
-        <p>
-            Your recommendation has been received.
-        </p>
-
-        <div id="submissionData"></div>
-
-        <a href="index.html" class="cta-btn">
-            Return Home
-        </a>
-
+        <div class="confirmation-card">
+            <h2>Thank You!</h2>
+            <p class="confirmation-intro">
+                Your tool recommendation has been successfully received and added to our review queue.
+            </p>
+            <div id="submissionData"></div>
+            <a href="index.html" class="cta-btn">Return Home</a>
+        </div>
     </section>
-
 </main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <h2>Tech Tools Directory</h2>
+            <p>Curated digital resources for modern professionals.</p>
+            <p>Lagos, Nigeria</p>
+            <p>info@techtoolsdirectory.com</p>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" width="24" height="24"></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><img src="images/twitter.svg" alt="Twitter" width="24" height="24"></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
+        </div>
+        <div class="footer-meta">
+            <p>WDD231 Final Project</p>
+            <p>Solomon Oluwadunsin Falabake</p>
+            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
+            <p id="lastModified"></p>
+            <p><a href="attributions.html">Attributions</a></p>
+            <p><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Project Demonstration Video</a></p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

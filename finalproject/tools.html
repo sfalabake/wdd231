@@ -3,93 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Tech Tools Directory | Tools</title>
-
     <meta name="description" content="Browse and explore 15+ essential tech tools for developers, designers, and productivity workflows.">
     <meta name="author" content="Solomon Oluwadunsin Falabake">
-
     <link rel="icon" href="images/favicon.ico">
 
-    <!-- Open Graph -->
     <meta property="og:title" content="Tech Tools Directory | Tools">
     <meta property="og:description" content="Explore development, design, productivity, and collaboration tools.">
     <meta property="og:image" content="https://sfalabake.github.io/wdd231/finalproject/images/hero-coding.webp">
     <meta property="og:url" content="https://sfalabake.github.io/wdd231/finalproject/tools.html">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/large.css">
 
-    <!-- JS Module -->
+    <script type="module" src="scripts/main.js" defer></script>
     <script type="module" src="scripts/tools.js" defer></script>
 </head>
-
 <body>
 
 <header>
     <nav class="navbar">
         <a href="index.html" class="brand">
-            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
+            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo" width="40" height="40">
             <span>Tech Tools Directory</span>
         </a>
-
         <button id="menuBtn" aria-label="Menu">☰</button>
-
         <ul id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="tools.html" class="active">Tools</a></li>
             <li><a href="submit.html">Submit Tool</a></li>
         </ul>
-
-        <button id="themeToggle">🌙</button>
+        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
     </nav>
 </header>
 
 <main>
-
     <section class="controls">
-
-        <!-- Search -->
+        <label for="searchInput" class="visually-hidden">Search Tech Tools</label>
         <input type="text" id="searchInput" placeholder="Search tools...">
 
-        <!-- Category Filters -->
         <div class="filters">
-            <button data-category="All">All</button>
-            <button data-category="Development">Development</button>
-            <button data-category="Design">Design</button>
-            <button data-category="Productivity">Productivity</button>
-            <button data-category="Collaboration">Collaboration</button>
-            <button data-category="Learning">Learning</button>
+            <button data-category="All" class="filter-btn active">All</button>
+            <button data-category="Development" class="filter-btn">Development</button>
+            <button data-category="Design" class="filter-btn">Design</button>
+            <button data-category="Productivity" class="filter-btn">Productivity</button>
+            <button data-category="Collaboration" class="filter-btn">Collaboration</button>
+            <button data-category="Learning" class="filter-btn">Learning</button>
         </div>
-
     </section>
 
-    <!-- Tools Grid -->
-    <section id="toolsContainer" class="grid"></section>
-
+    <section id="toolsContainer" class="grid-container"></section>
 </main>
 
-<!-- MODAL -->
 <dialog id="toolModal">
     <div class="modal-content">
-        <button id="closeModal">✖</button>
-
-        <img id="modalImage" alt="">
+        <button id="closeModal" aria-label="Close details modal">✖</button>
+        <img id="modalImage" alt="" width="400" height="250" loading="lazy">
         <h2 id="modalTitle"></h2>
         <p id="modalDescription"></p>
         <p><strong>Platform:</strong> <span id="modalPlatform"></span></p>
         <p><strong>Price:</strong> <span id="modalPrice"></span></p>
-
-        <a id="modalLink" target="_blank">Visit Website</a>
+        <a id="modalLink" target="_blank" rel="noopener noreferrer">Visit Website</a>
     </div>
 </dialog>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-info">
+            <h2>Tech Tools Directory</h2>
+            <p>Curated digital resources for modern professionals.</p>
+            <p>Lagos, Nigeria</p>
+            <p>info@techtoolsdirectory.com</p>
+        </div>
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" width="24" height="24"></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><img src="images/twitter.svg" alt="Twitter" width="24" height="24"></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
+        </div>
+        <div class="footer-meta">
+            <p>WDD231 Final Project</p>
+            <p>Solomon Oluwadunsin Falabake</p>
+            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
+            <p id="lastModified"></p>
+            <p><a href="attributions.html">Attributions</a></p>
+            <p><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Project Demonstration Video</a></p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

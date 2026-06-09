@@ -1,13 +1,11 @@
-import { loadTheme, initializeThemeToggle } from "./storage.js";
+// DOM Targets
+const toolsGrid = document.querySelector("#toolsContainer");
+const searchField = document.querySelector("#searchInput");
+const filterGroup = document.querySelectorAll(".filters button");
 
-const container = document.querySelector("#toolsContainer");
-const searchInput = document.querySelector("#searchInput");
-const filterButtons = document.querySelectorAll(".filters button");
-
-// Modal elements
-const modal = document.querySelector("#toolModal");
-const closeModalBtn = document.querySelector("#closeModal");
-
+// Modal Targets
+const infoModal = document.querySelector("#toolModal");
+const exitModalBtn = document.querySelector("#closeModal");
 const modalTitle = document.querySelector("#modalTitle");
 const modalDesc = document.querySelector("#modalDescription");
 const modalPlatform = document.querySelector("#modalPlatform");
@@ -15,101 +13,102 @@ const modalPrice = document.querySelector("#modalPrice");
 const modalImage = document.querySelector("#modalImage");
 const modalLink = document.querySelector("#modalLink");
 
-let toolsData = [];
+let primaryToolsDataset = [];
+let activeCategorySelection = "All";
+let operationalSearchQuery = "";
 
-// ===============================
-// FETCH DATA (REQUIRED RUBRIC)
-// ===============================
-async function getTools() {
+async function retrieveToolsInventory() {
+    if (!toolsGrid) return;
+
     try {
-        const response = await fetch("data/tools.json");
-
-        if (!response.ok) {
-            throw new Error("Failed to load tools data");
+        const networkResponse = await fetch("data/tools.json");
+        if (!networkResponse.ok) {
+            throw new Error(`HTTP Error Status: ${networkResponse.status}`);
         }
 
-        toolsData = await response.json();
-
-        displayTools(toolsData);
-
-    } catch (error) {
-        container.innerHTML = `<p class="error">Error loading tools: ${error.message}</p>`;
+        primaryToolsDataset = await networkResponse.json();
+        executeCombinedFiltering();
+    } catch (networkException) {
+        console.error("Data Load Exception Error:", networkException);
+        toolsGrid.innerHTML = `<p class="error-msg">Unable to load tool directory records.</p>`;
     }
 }
 
-// ===============================
-// DISPLAY TOOLS (ARRAY METHOD + TEMPLATE LITERAL)
-// ===============================
-function displayTools(tools) {
-    container.innerHTML = "";
+function renderToolsGridDisplay(dynamicToolsArray) {
+    toolsGrid.innerHTML = "";
 
-    tools.forEach(tool => {
-        const card = document.createElement("div");
-        card.classList.add("tool-card");
+    if (dynamicToolsArray.length === 0) {
+        toolsGrid.innerHTML = `<p class="no-results-msg">No tools match your search criteria.</p>`;
+        return;
+    }
 
-        card.innerHTML = `
-            <img src="${tool.image}" alt="${tool.name}" loading="lazy">
-            <h3>${tool.name}</h3>
-            <p>${tool.category}</p>
+    dynamicToolsArray.forEach(toolItem => {
+        const functionalCardNode = document.createElement("div");
+        functionalCardNode.classList.add("tool-card");
+
+        functionalCardNode.innerHTML = `
+            <img src="${toolItem.image}" alt="${toolItem.name} logo" loading="lazy" width="80" height="80">
+            <h3>${toolItem.name}</h3>
+            <p class="tool-category-badge">${toolItem.category}</p>
             <button class="view-btn">View Details</button>
         `;
 
-        card.querySelector(".view-btn").addEventListener("click", () => openModal(tool));
-
-        container.appendChild(card);
+        functionalCardNode.querySelector(".view-btn").addEventListener("click", () => triggerModalExpansion(toolItem));
+        toolsGrid.appendChild(functionalCardNode);
     });
 }
 
-// ===============================
-// MODAL FUNCTIONALITY
-// ===============================
-function openModal(tool) {
-    modalTitle.textContent = tool.name;
-    modalDesc.textContent = tool.description;
-    modalPlatform.textContent = tool.platform;
-    modalPrice.textContent = tool.price;
-    modalImage.src = tool.image;
-    modalImage.alt = tool.name;
-    modalLink.href = tool.website;
+function executeCombinedFiltering() {
+    const activeFilteredList = primaryToolsDataset.filter(tool => {
+        const matchesCategory = (activeCategorySelection === "All" || tool.category === activeCategorySelection);
+        const matchesSearchText = (
+            tool.name.toLowerCase().includes(operationalSearchQuery) ||
+            tool.category.toLowerCase().includes(operationalSearchQuery)
+        );
+        return matchesCategory && matchesSearchText;
+    });
 
-    modal.showModal();
+    renderToolsGridDisplay(activeFilteredList);
 }
 
-closeModalBtn.addEventListener("click", () => modal.close());
+function triggerModalExpansion(toolObject) {
+    if (!infoModal) return;
 
-// ===============================
-// SEARCH FUNCTION
-// ===============================
-searchInput.addEventListener("input", () => {
-    const value = searchInput.value.toLowerCase();
+    modalTitle.textContent = toolObject.name;
+    modalDesc.textContent = toolObject.description || "No supplemental details available.";
+    modalPlatform.textContent = toolObject.platform || "Web / Universal Browser Access";
+    modalPrice.textContent = toolObject.price || "Free Open Source Project";
+    modalImage.src = toolObject.image;
+    modalImage.alt = `${toolObject.name} interface`;
+    modalLink.href = toolObject.website;
 
-    const filtered = toolsData.filter(tool =>
-        tool.name.toLowerCase().includes(value) ||
-        tool.category.toLowerCase().includes(value)
-    );
+    infoModal.showModal();
+}
 
-    displayTools(filtered);
-});
-
-// ===============================
-// CATEGORY FILTER
-// ===============================
-filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const category = btn.dataset.category;
-
-        if (category === "All") {
-            displayTools(toolsData);
-        } else {
-            const filtered = toolsData.filter(tool => tool.category === category);
-            displayTools(filtered);
-        }
+// Event Listeners
+if (searchField) {
+    searchField.addEventListener("input", (event) => {
+        operationalSearchQuery = event.target.value.toLowerCase().trim();
+        executeCombinedFiltering();
     });
-});
+}
 
-// ===============================
-// INIT
-// ===============================
-loadTheme();
-initializeThemeToggle();
-getTools();
+if (filterGroup) {
+    filterGroup.forEach(buttonElement => {
+        buttonElement.addEventListener("click", () => {
+            filterGroup.forEach(btn => btn.classList.remove("active"));
+            buttonElement.classList.add("active");
+            activeCategorySelection = buttonElement.dataset.category;
+            executeCombinedFiltering();
+        });
+    });
+}
+
+if (exitModalBtn && infoModal) {
+    exitModalBtn.addEventListener("click", () => infoModal.close());
+    infoModal.addEventListener("click", (event) => {
+        if (event.target === infoModal) infoModal.close();
+    });
+}
+
+document.addEventListener("DOMContentLoaded", retrieveToolsInventory);

@@ -1,24 +1,28 @@
+/* ==========================================================================
+   WDD231 Final Project - Tech Tools Directory
+   Author: Solomon Oluwadunsin Falabake
+   File: large.css (Desktop Multi-Column Ruleset)
+   ========================================================================== */
+
 @media screen and (min-width: 768px) {
 
-    /* Navigation */
-
+    /* Responsive Navigation Header Adjustments */
     #menuBtn {
         display: none;
     }
 
-    #navLinks {
-        display: flex !important;
+    .navbar #navLinks {
+        display: flex;
         width: auto;
         gap: 1rem;
         margin: 0;
     }
 
-    #navLinks li {
+    .navbar #navLinks li {
         margin: 0;
     }
 
-    /* Hero */
-
+    /* Hero Section Dual Columns */
     .hero {
         grid-template-columns: 1fr 1fr;
     }
@@ -27,41 +31,29 @@
         text-align: left;
     }
 
-    /* Categories */
-
+    /* Homepage Feature Layout Columns */
     .category-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    /* Benefits */
 
     .benefits-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Featured */
-
     .featured-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Tools */
-
-    .grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* Master Tools Inventory Grid Layout Engine */
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
     }
 
-    /* Footer */
-
+    /* Unified Three-Column Footer Grid Layout */
     .footer-content {
         grid-template-columns: 2fr 1fr 1fr;
         align-items: start;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .logo {
-        width: 32px;
-        height: 32px;
+        gap: 3rem;
     }
 }
