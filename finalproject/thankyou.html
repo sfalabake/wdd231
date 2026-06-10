@@ -20,20 +20,21 @@
 <body>
 
 <header>
-    <nav class="navbar">
-        <a href="index.html" class="brand">
-            <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo" width="40" height="40">
-            <span>Tech Tools Directory</span>
-        </a>
-        <button id="menuBtn" aria-label="Navigation Menu">☰</button>
-        <ul id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="tools.html">Tools</a></li>
-            <li><a href="submit.html">Submit Tool</a></li>
-        </ul>
-        <button id="themeToggle" aria-label="Toggle Dark Mode">🌙</button>
-    </nav>
-</header>
+        <nav class="navbar">
+            <a href="index.html" class="brand">
+                <img src="images/tecttooldev-logo.png" alt="Tech Tools Directory logo" class="logo">
+                <span>TechTools Dev</span>
+            </a>
+            <button id="menuBtn" aria-label="Toggle Menu">&#9776;</button>
+            <button id="themeToggle" aria-label="Toggle Dark Mode">&#9788;</button>
+            <ul id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="tools.html">Tools</a></li>
+                <li><a href="submit.html">Submit Tool</a></li>
+                <li><a href="attributions.html">Attributions</a></li>
+            </ul>
+        </nav>
+    </header>
 
 <main>
     <section class="confirmation">
@@ -49,28 +50,27 @@
 </main>
 
 <footer>
-    <div class="footer-content">
-        <div class="footer-info">
-            <h2>Tech Tools Directory</h2>
-            <p>Curated digital resources for modern professionals.</p>
-            <p>Lagos, Nigeria</p>
-            <p>info@techtoolsdirectory.com</p>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Tech Tools Directory</h3>
+                <p>An educational frontend catalog explicitly engineered to optimize production architectures for developers' global scale workflows.</p>
+            </div>
+            <div class="footer-meta">
+                <h3>Project Information</h3>
+                <p>&copy; <span id="currentYear"></span> | Solomon Oluwadunsin Falabake</p>
+                <p class="modification-date">Last Modified: <span id="lastModificationDate"></span></p>
+            </div>
+            <div class="footer-social">
+                <h3>Developer Portal</h3>
+                <div class="social-links">
+                    <a href="https://github.com/sfalabake/wdd231" target="_blank" rel="noopener"><img src="images/github.svg" alt="GitHub"></a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener"><img src="images/twitter.svg" alt="Twitter"></a>
+                    <a href="https://linkedin.com" target="_blank" rel="noopener"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+                </div>
+                <p><a href="https://youtube.com" class="video-link">project walkthrough video</a></p>
+            </div>
         </div>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><img src="images/github.svg" alt="GitHub" width="24" height="24"></a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><img src="images/twitter.svg" alt="Twitter" width="24" height="24"></a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="images/linkedin.svg" alt="LinkedIn" width="24" height="24"></a>
-        </div>
-        <div class="footer-meta">
-            <p>WDD231 Final Project</p>
-            <p>Solomon Oluwadunsin Falabake</p>
-            <p>&copy; <span id="year"></span> Tech Tools Directory</p>
-            <p id="lastModified"></p>
-            <p><a href="attributions.html">Attributions</a></p>
-            <p><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">Project Demonstration Video</a></p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
