@@ -49,7 +49,19 @@
             <h1>Suggest a Developer Tool</h1>
             <p>Help optimize engineering pipelines globally. Submit resource entries using our accessible structured entry matrix below.</p>
             
-            <form action="#" method="get">
+            <form action="thankyou.html" method="get">
+                <fieldset>
+                    <legend>Submitter Information</legend>
+
+                    <label>Full Name
+                        <input type="text" name="fullName" required placeholder="e.g., Solomon Oluwadunsin Falabake">
+                    </label>
+
+                    <label>Email Address
+                        <input type="email" name="email" required placeholder="you@example.com">
+                    </label>
+                </fieldset>
+
                 <fieldset>
                     <legend>Resource Identity Details</legend>
                     
@@ -63,11 +75,21 @@
 
                     <label>Core Pipeline Category
                         <select name="toolCategory" required>
-                            <option value="" disabled selected>Select Architecture Classification...</option>
-                            <option value="frontend">Frontend Development</option>
-                            <option value="uiux">UI/UX Interface Design</option>
-                            <option value="devops">DevOps & Performance</option>
+                            <option value="" disabled selected>Select a Category...</option>
+                            <option value="Development">Development</option>
+                            <option value="Design">Design</option>
+                            <option value="Productivity">Productivity</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Learning">Learning</option>
                         </select>
+                    </label>
+
+                    <label>Supported Platform
+                        <input type="text" name="platform" required placeholder="e.g., Web, Windows, macOS, Linux">
+                    </label>
+
+                    <label>Price Model
+                        <input type="text" name="price" required placeholder="e.g., Free, Free / Paid">
                     </label>
                 </fieldset>
 

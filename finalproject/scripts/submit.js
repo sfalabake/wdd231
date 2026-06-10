@@ -6,23 +6,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        const requiredFields = [
+            "fullName",
+            "email",
+            "toolName",
+            "toolUrl",
+            "toolCategory",
+            "platform",
+            "price",
+            "toolDescription"
+        ];
 
-        const formData = new FormData(form);
-        const submission = {
-            toolName: formData.get("toolName")?.toString().trim() || "",
-            toolUrl: formData.get("toolUrl")?.toString().trim() || "",
-            toolCategory: formData.get("toolCategory")?.toString().trim() || "",
-            toolDescription: formData.get("toolDescription")?.toString().trim() || "",
-            submittedAt: new Date().toISOString()
-        };
+        const missingFields = requiredFields.filter((fieldName) => {
+            const field = form.elements[fieldName];
+            return !field || !field.value.trim();
+        });
 
-        if (!submission.toolName || !submission.toolUrl || !submission.toolCategory || !submission.toolDescription) {
+        if (missingFields.length > 0) {
+            event.preventDefault();
             alert("Please complete every field before submitting your tool recommendation.");
-            return;
         }
-
-        sessionStorage.setItem("techToolsSubmission", JSON.stringify(submission));
-        window.location.href = "thankyou.html";
     });
 });

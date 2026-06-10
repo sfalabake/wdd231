@@ -1,31 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
     const submissionDataElement = document.getElementById("submissionData");
-    const submissionJson = sessionStorage.getItem("techToolsSubmission");
+    const params = new URLSearchParams(window.location.search);
 
     if (!submissionDataElement) {
         return;
     }
 
-    if (!submissionJson) {
+    const toolName = params.get("toolName") || "";
+    const toolUrl = params.get("toolUrl") || "";
+    const toolCategory = params.get("toolCategory") || "";
+    const platform = params.get("platform") || "";
+    const price = params.get("price") || "";
+    const toolDescription = params.get("toolDescription") || "";
+    const fullName = params.get("fullName") || "";
+    const email = params.get("email") || "";
+
+    if (!toolName || !toolUrl || !toolCategory || !toolDescription) {
         submissionDataElement.innerHTML = `
             <p>Submission details were not found. Please return to the form and submit again.</p>
         `;
         return;
     }
 
-    const submission = JSON.parse(submissionJson);
-    const submittedAt = new Date(submission.submittedAt).toLocaleString();
-
     submissionDataElement.innerHTML = `
         <div class="submission-summary">
             <h3>Submission Summary</h3>
-            <p><strong>Tool Name:</strong> ${submission.toolName}</p>
-            <p><strong>Tool URL:</strong> <a href="${submission.toolUrl}" target="_blank" rel="noopener">${submission.toolUrl}</a></p>
-            <p><strong>Category:</strong> ${submission.toolCategory}</p>
-            <p><strong>Description:</strong> ${submission.toolDescription}</p>
-            <p><strong>Submitted:</strong> ${submittedAt}</p>
+            <p><strong>Submitted by:</strong> ${fullName}</p>
+            <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+            <p><strong>Tool Name:</strong> ${toolName}</p>
+            <p><strong>Tool URL:</strong> <a href="${toolUrl}" target="_blank" rel="noopener">${toolUrl}</a></p>
+            <p><strong>Category:</strong> ${toolCategory}</p>
+            <p><strong>Platform:</strong> ${platform}</p>
+            <p><strong>Price:</strong> ${price}</p>
+            <p><strong>Description:</strong> ${toolDescription}</p>
         </div>
     `;
-
-    sessionStorage.removeItem("techToolsSubmission");
 });
