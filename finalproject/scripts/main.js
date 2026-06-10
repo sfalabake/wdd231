@@ -68,14 +68,24 @@ function initializeGlobalThemeEngine() {
 function populateContextualFooterMetrics() {
     const currentYearTarget = document.getElementById("currentYear");
     const lastModificationTarget = document.getElementById("lastModificationDate");
+    const yearTarget = document.getElementById("year");
+    const lastModifiedTarget = document.getElementById("lastModified");
+    const currentYear = new Date().getFullYear();
+    const lastModified = document.lastModified;
 
-    // Dynamically write current calendar year
     if (currentYearTarget) {
-        currentYearTarget.textContent = new Date().getFullYear();
+        currentYearTarget.textContent = currentYear;
     }
 
-    // Capture and write document file's structural last update timestamp
+    if (yearTarget) {
+        yearTarget.textContent = currentYear;
+    }
+
     if (lastModificationTarget) {
-        lastModificationTarget.textContent = document.lastModified;
+        lastModificationTarget.textContent = lastModified;
+    }
+
+    if (lastModifiedTarget) {
+        lastModifiedTarget.textContent = `Last Modified: ${lastModified}`;
     }
 }

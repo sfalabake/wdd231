@@ -5,8 +5,8 @@
     "category": "Development",
     "platform": "Windows, macOS, Linux",
     "price": "Free",
-    "description": "A powerful and lightweight code editor with rich extensions and Git integration.",
-    "website": "https://code.visualstudio.com/",
+    "shortDescription": "A lightweight but powerful code editor with extensions and Git integration.",
+    "url": "https://code.visualstudio.com/",
     "image": "images/vscode.webp"
   },
   {
@@ -15,8 +15,8 @@
     "category": "Development",
     "platform": "Web",
     "price": "Free / Paid",
-    "description": "Platform for version control and collaborative software development using Git.",
-    "website": "https://github.com/",
+    "shortDescription": "Platform for version control and collaborative software development.",
+    "url": "https://github.com/",
     "image": "images/github.webp"
   },
   {
@@ -25,8 +25,8 @@
     "category": "Development",
     "platform": "Windows, macOS, Linux",
     "price": "Free",
-    "description": "Distributed version control system for tracking code changes.",
-    "website": "https://git-scm.com/",
+    "shortDescription": "Distributed version control system for tracking changes in code.",
+    "url": "https://git-scm.com/",
     "image": "images/git.webp"
   },
   {
@@ -35,8 +35,8 @@
     "category": "Development",
     "platform": "Windows, macOS, Linux, Web",
     "price": "Free / Paid",
-    "description": "API development and testing tool used by developers worldwide.",
-    "website": "https://www.postman.com/",
+    "shortDescription": "API testing and development platform.",
+    "url": "https://www.postman.com/",
     "image": "images/postman.webp"
   },
   {
@@ -45,8 +45,8 @@
     "category": "Design",
     "platform": "Web, Windows, macOS",
     "price": "Free / Paid",
-    "description": "Collaborative interface design tool for UI/UX and prototyping.",
-    "website": "https://www.figma.com/",
+    "shortDescription": "Collaborative UI/UX design and prototyping tool.",
+    "url": "https://www.figma.com/",
     "image": "images/figma.webp"
   },
   {
@@ -55,8 +55,8 @@
     "category": "Design",
     "platform": "Web, Mobile",
     "price": "Free / Paid",
-    "description": "Graphic design platform for creating presentations, posters, and social media content.",
-    "website": "https://www.canva.com/",
+    "shortDescription": "Easy graphic design tool for social media and presentations.",
+    "url": "https://www.canva.com/",
     "image": "images/canva.webp"
   },
   {
@@ -65,18 +65,18 @@
     "category": "Design",
     "platform": "Web, Mobile",
     "price": "Free / Paid",
-    "description": "Quick content creation tool for graphics, videos, and web pages.",
-    "website": "https://www.adobe.com/express/",
+    "shortDescription": "Quick content creation for graphics and short videos.",
+    "url": "https://www.adobe.com/express/",
     "image": "images/adobe-express.webp"
   },
   {
     "id": 8,
     "name": "Notion",
     "category": "Productivity",
-    "platform": "Web, Windows, macOS, Mobile",
+    "platform": "Web, Desktop, Mobile",
     "price": "Free / Paid",
-    "description": "All-in-one workspace for notes, tasks, databases, and collaboration.",
-    "website": "https://www.notion.so/",
+    "shortDescription": "All-in-one workspace for notes, tasks, and collaboration.",
+    "url": "https://www.notion.so/",
     "image": "images/notion.webp"
   },
   {
@@ -85,18 +85,18 @@
     "category": "Productivity",
     "platform": "Web, Mobile",
     "price": "Free / Paid",
-    "description": "Visual project management tool using boards, lists, and cards.",
-    "website": "https://trello.com/",
+    "shortDescription": "Visual project management using boards and cards.",
+    "url": "https://trello.com/",
     "image": "images/trello.webp"
   },
   {
     "id": 10,
     "name": "Todoist",
     "category": "Productivity",
-    "platform": "Web, Mobile, Desktop",
+    "platform": "Web, Desktop, Mobile",
     "price": "Free / Paid",
-    "description": "Task management app for organizing personal and team productivity.",
-    "website": "https://todoist.com/",
+    "shortDescription": "Task management and productivity organization app.",
+    "url": "https://todoist.com/",
     "image": "images/todoist.webp"
   },
   {
@@ -105,8 +105,8 @@
     "category": "Collaboration",
     "platform": "Web, Desktop, Mobile",
     "price": "Free / Paid",
-    "description": "Team communication platform with channels, messaging, and integrations.",
-    "website": "https://slack.com/",
+    "shortDescription": "Team communication and collaboration platform.",
+    "url": "https://slack.com/",
     "image": "images/slack.webp"
   },
   {
@@ -115,8 +115,8 @@
     "category": "Collaboration",
     "platform": "Web, Desktop, Mobile",
     "price": "Free",
-    "description": "Communication platform for communities, voice chat, and messaging.",
-    "website": "https://discord.com/",
+    "shortDescription": "Voice, video, and text communication platform.",
+    "url": "https://discord.com/",
     "image": "images/discord.webp"
   },
   {
@@ -125,8 +125,8 @@
     "category": "Collaboration",
     "platform": "Web, Desktop, Mobile",
     "price": "Free / Paid",
-    "description": "Video conferencing tool for meetings, webinars, and online communication.",
-    "website": "https://zoom.us/",
+    "shortDescription": "Video conferencing and online meetings tool.",
+    "url": "https://zoom.us/",
     "image": "images/zoom.webp"
   },
   {
@@ -135,8 +135,8 @@
     "category": "Learning",
     "platform": "Web",
     "price": "Free",
-    "description": "Interactive platform for learning web development and programming.",
-    "website": "https://www.freecodecamp.org/",
+    "shortDescription": "Learn web development with interactive lessons.",
+    "url": "https://www.freecodecamp.org/",
     "image": "images/freecodecamp.webp"
   },
   {
@@ -145,8 +145,8 @@
     "category": "Learning",
     "platform": "Web",
     "price": "Free",
-    "description": "Authoritative documentation for HTML, CSS, and JavaScript.",
-    "website": "https://developer.mozilla.org/",
+    "shortDescription": "Trusted documentation for HTML, CSS, and JavaScript.",
+    "url": "https://developer.mozilla.org/",
     "image": "images/mdn.webp"
   }
 ]

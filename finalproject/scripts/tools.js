@@ -1,209 +1,154 @@
-/* ==========================================================================
-WDD231 Final Project - Interactive Tools Engine
-Author: Solomon Oluwadunsin Falabake
-========================================================================== */
-
-const DATA_URL = "data/tools.json";
+const DATA_URL = "./data/tools.json";
 let toolsCache = [];
 
-/* ===============================
-INIT
-=============================== */
 document.addEventListener("DOMContentLoaded", () => {
     fetchAndInitializeDirectory();
     setupInteractiveFilterListeners();
+    setupModalSystem();
 });
 
 /* ===============================
 FETCH DATA
 =============================== */
 async function fetchAndInitializeDirectory() {
-    const gridContainer = document.getElementById("directoryGrid");
-    if (!gridContainer) return;
+    const grid = document.getElementById("directoryGrid");
+    if (!grid) return;
 
     try {
-        const response = await fetch(DATA_URL);
-        if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+        const res = await fetch(DATA_URL);
+        if (!res.ok) throw new Error("Failed to load tools data");
 
-        toolsCache = await response.json();
-        renderDirectoryCards(toolsCache);
+        toolsCache = await res.json();
+        renderTools(toolsCache);
 
-    } catch (error) {
-        console.error("Data load error:", error);
-        gridContainer.innerHTML =
-            `<p class="error-msg">Unable to load tools. Please refresh.</p>`;
+    } catch (err) {
+        console.error(err);
+        grid.innerHTML = `<p class="error-msg">Failed to load tools.</p>`;
     }
 }
 
 /* ===============================
-RENDER CARDS
+RENDER
 =============================== */
-function renderDirectoryCards(toolsList) {
-    const gridContainer = document.getElementById("directoryGrid");
-    if (!gridContainer) return;
+function renderTools(list) {
+    const grid = document.getElementById("directoryGrid");
+    if (!grid) return;
 
-    gridContainer.innerHTML = "";
+    grid.innerHTML = "";
 
-    if (!toolsList.length) {
-        gridContainer.innerHTML =
-            `<p class="no-results">No tools found.</p>`;
+    if (!list.length) {
+        grid.innerHTML = `<p>No tools found.</p>`;
         return;
     }
 
-    toolsList.forEach(tool => {
+    list.forEach(tool => {
         const card = document.createElement("article");
         card.className = "tool-card";
-        card.setAttribute("data-category", tool.category);
-
-        // SAFE IMAGE FALLBACK
-        const iconPath =
-            tool.icon ||
-            tool.image ||
-            tool.logo ||
-            "images/placeholder-icon.png";
 
         card.innerHTML = `
-            <img 
-                src="${iconPath}" 
-                alt="${tool.name} logo"
-                class="tool-icon"
-                loading="lazy"
-                width="48"
-                height="48">
-
+            <img src="${tool.image}" alt="${tool.name}" loading="lazy">
             <h3>${tool.name}</h3>
             <p>${tool.shortDescription}</p>
-
             <button class="view-btn" data-id="${tool.id}">
                 Inspect Details
             </button>
         `;
 
-        gridContainer.appendChild(card);
+        grid.appendChild(card);
     });
-
-    setupModalTriggerBindings();
 }
 
 /* ===============================
-FILTER + SEARCH
+FILTER SYSTEM
 =============================== */
 function setupInteractiveFilterListeners() {
-    const searchInput = document.getElementById("searchInput");
-    const filterButtons = document.querySelectorAll(".filter-btn");
+    const search = document.getElementById("searchInput");
+    const buttons = document.querySelectorAll(".filter-btn");
 
-    if (searchInput) {
-        searchInput.addEventListener("input", executeDirectoryQueryFilter);
-    }
+    search?.addEventListener("input", applyFilters);
 
-    filterButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            filterButtons.forEach(btn => btn.classList.remove("active"));
-            e.currentTarget.classList.add("active");
-            executeDirectoryQueryFilter();
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            applyFilters();
         });
     });
 }
 
-/* ===============================
-FILTER ENGINE
-=============================== */
-function executeDirectoryQueryFilter() {
-    const searchInput = document.getElementById("searchInput");
-    const activeFilterBtn = document.querySelector(".filter-btn.active");
+function applyFilters() {
+    const search = document.getElementById("searchInput")?.value.toLowerCase() || "";
+    const active = document.querySelector(".filter-btn.active")?.dataset.category || "All";
 
-    const queryString = searchInput
-        ? searchInput.value.toLowerCase().trim()
-        : "";
+    const filtered = toolsCache.filter(t => {
+        const matchCategory =
+            active === "All" || t.category === active;
 
-    // Synchronized to match the dataset configuration string "All"
-    const activeCategory = activeFilterBtn
-        ? activeFilterBtn.getAttribute("data-category")
-        : "All";
+        const matchSearch =
+            (t.name || "").toLowerCase().includes(search) ||
+            (t.shortDescription || "").toLowerCase().includes(search);
 
-    const filteredDataset = toolsCache.filter(tool => {
-        // Keeps evaluation safe against lowercase/uppercase differences between HTML attributes and JSON keys
-        const matchesCategory =
-            activeCategory === "All" ||
-            tool.category.toLowerCase() === activeCategory.toLowerCase();
-
-        const matchesSearch =
-            tool.name.toLowerCase().includes(queryString) ||
-            tool.shortDescription.toLowerCase().includes(queryString) ||
-            (tool.tags &&
-                tool.tags.some(tag =>
-                    tag.toLowerCase().includes(queryString)
-                ));
-
-        return matchesCategory && matchesSearch;
+        return matchCategory && matchSearch;
     });
 
-    renderDirectoryCards(filteredDataset);
+    renderTools(filtered);
 }
 
 /* ===============================
-MODAL SYSTEM
+MODAL SYSTEM (CLEAN + RELIABLE)
 =============================== */
-function setupModalTriggerBindings() {
-    const openModalButtons =
-        document.querySelectorAll(".tool-card .view-btn");
-
-    const modalElement = document.getElementById("toolModal");
-    const closeModalBtn = document.getElementById("closeModalBtn");
-
-    openModalButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const selectedId =
-                e.currentTarget.getAttribute("data-id");
-
-            const foundToolObj = toolsCache.find(
-                t => String(t.id) === String(selectedId)
-            );
-
-            if (foundToolObj && modalElement) {
-                displayPopulatedModalContent(foundToolObj, modalElement);
-            }
-        });
-    });
-
-    if (closeModalBtn && modalElement) {
-        closeModalBtn.addEventListener("click", () =>
-            modalElement.close()
-        );
-
-        modalElement.addEventListener("click", (e) => {
-            if (e.target === modalElement) modalElement.close();
-        });
-    }
-}
-
-/* ===============================
-MODAL CONTENT
-=============================== */
-function displayPopulatedModalContent(tool, modal) {
+function setupModalSystem() {
+    const grid = document.getElementById("directoryGrid");
+    const modal = document.getElementById("toolModal");
     const modalBody = document.getElementById("modalBody");
-    if (!modalBody) return;
+    const closeBtn = document.getElementById("closeModalBtn");
 
-    modalBody.innerHTML = `
-        <h2>${tool.name}</h2>
+    if (!grid || !modal || !modalBody) return;
 
-        <p class="modal-category">
-            <strong>Category:</strong> ${tool.category}
-        </p>
+    // Event delegation
+    grid.addEventListener("click", (e) => {
+        const btn = e.target.closest(".view-btn");
+        if (!btn) return;
 
-        <p class="modal-desc">
-            ${tool.longDescription || tool.shortDescription}
-        </p>
+        const id = btn.dataset.id;
+        const tool = toolsCache.find(t => String(t.id) === String(id));
 
-        <p>
-            <strong>Tags:</strong>
-            ${tool.tags ? tool.tags.join(", ") : "General"}
-        </p>
+        if (!tool) return;
 
-        <a href="${tool.url}" target="_blank" rel="noopener noreferrer" class="cta-btn">
-            Visit Tool
-        </a>
-    `;
+        modalBody.innerHTML = `
+            <img src="${tool.image}" alt="${tool.name} logo" class="modal-image" loading="lazy">
+            <h2>${tool.name}</h2>
+            <p><strong>Category:</strong> ${tool.category}</p>
+            <p><strong>Platform:</strong> ${tool.platform}</p>
+            <p><strong>Price:</strong> ${tool.price}</p>
+            <p>${tool.shortDescription}</p>
+            <a href="${tool.url}" target="_blank" class="cta-btn">Visit Tool</a>
+        `;
 
-    modal.showModal();
+        if (typeof modal.showModal === "function") {
+            modal.showModal();
+        } else {
+            modal.setAttribute("open", "");
+        }
+        document.body.classList.add("modal-open");
+    });
+
+    closeBtn?.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", e => {
+        if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && modal.open) closeModal();
+    });
+
+    function closeModal() {
+        if (typeof modal.close === "function") {
+            modal.close();
+        } else {
+            modal.removeAttribute("open");
+        }
+        document.body.classList.remove("modal-open");
+    }
 }

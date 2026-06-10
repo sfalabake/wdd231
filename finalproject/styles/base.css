@@ -216,6 +216,14 @@ header {
     border: 1px solid var(--border-color);
 }
 
+.featured-card img,
+.tool-card img {
+    width: 140px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
 .featured-card,
 .tool-card {
     text-align: center;
@@ -223,6 +231,18 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+.modal-image {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 1rem;
+    margin: 0 auto 1rem;
+}
+
+.modal-content {
+    padding: 1.5rem;
 }
 
 .view-btn {
@@ -413,4 +433,21 @@ body.dark .logo {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1rem;
+}
+
+dialog::backdrop {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+}
+
+dialog {
+    border: none;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    padding: 0;
+}
+
+.modal-open {
+    overflow: hidden;
 }

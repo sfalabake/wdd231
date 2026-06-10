@@ -1,6 +1,8 @@
 const featuredContainer = document.querySelector("#featuredTools");
 
 async function loadFeaturedTools() {
+    if (!featuredContainer) return;
+
     try {
 
         const response = await fetch("data/tools.json");
