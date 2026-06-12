@@ -681,6 +681,7 @@ footer {
 }
 
 /* ================= DISCOVER GRID SYSTEM ================= */
+/* Mobile First Layout (1 Column) */
 .discover-grid {
   display: grid;
   gap: 1.5rem;
@@ -696,22 +697,8 @@ footer {
     "card8";
 }
 
-@media (max-width: 640px) {
-  .discover-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6"
-      "card7"
-      "card8";
-  }
-}
-
-@media (min-width: 641px) and (max-width: 1024px) {
+/* Tablet Layout (2 Columns) */
+@media (min-width: 641px) {
   .discover-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
@@ -722,6 +709,7 @@ footer {
   }
 }
 
+/* Desktop Layout (4 Columns) */
 @media (min-width: 1025px) {
   .discover-grid {
     grid-template-columns: repeat(4, 1fr);
